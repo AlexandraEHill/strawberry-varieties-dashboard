@@ -1,0 +1,51 @@
+region,year,acres,source
+California,2016,38500,NASS (planted)
+California,2017,39000,NASS (planted)
+California,2018,36300,NASS (planted)
+California,2019,35300,NASS (planted)
+California,2020,38000,NASS (planted)
+California,2021,40200,NASS (planted)
+California,2022,43600,NASS (planted)
+California,2023,43100,NASS (planted)
+California,2024,45300,NASS (planted)
+California,2025,45800,NASS (planted)
+California,2010,37616,Commission (reported)
+California,2011,37336,Commission (reported)
+California,2012,37734,Commission (reported)
+California,2013,40792,Commission (reported)
+California,2014,38938,Commission (reported)
+California,2015,38106,Commission (reported)
+California,2016,36120,Commission (reported)
+California,2017,36452,Commission (reported)
+California,2018,33861,Commission (reported)
+California,2019,33193,Commission (reported)
+California,2020,35635,Commission (reported)
+California,2021,37485,Commission (reported)
+California,2022,40986,Commission (reported)
+California,2023,40421,Commission (reported)
+California,2024,42332,Commission (reported)
+California,2025,42899,Commission (reported)
+California,2026,43541,Commission (reported)
+Florida,2016,9600,NASS (planted)
+Florida,2017,9600,NASS (planted)
+Florida,2018,9400,NASS (planted)
+Florida,2019,10500,NASS (planted)
+Florida,2020,11700,NASS (planted)
+Florida,2021,12300,NASS (planted)
+Florida,2022,12800,NASS (planted)
+Florida,2023,14200,NASS (planted)
+Florida,2024,16200,NASS (planted)
+Florida,2025,17000,NASS (planted)
+Florida,2022,12196,Commission (reported)
+Florida,2023,13390,Commission (reported)
+Florida,2024,16143,Commission (reported)
+Florida,2025,18298,Commission (reported)
+Florida,2026,19123,Commission (reported)
+Mexico,2010,15523,SIAP / GAIN
+Mexico,2017,35707,SIAP / GAIN
+Mexico,2019,42008,SIAP / GAIN
+Mexico,2022,31479,SIAP / GAIN
+Mexico,2023,33174,SIAP / GAIN
+Mexico,2024,37305,SIAP / GAIN
+Mexico,2025,37278,SIAP / GAIN
+Mexico,2026,37931,SIAP / GAIN
