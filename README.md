@@ -15,25 +15,27 @@ It opens in your browser at http://localhost:8501.
 
 ## What it does
 
-**Sidebar controls**
-- **Practice** — Both (total), Conventional, or Organic. Conventional/Organic are reported
-  statewide (all plantings combined), by variety, 2021 onward; "Both" keeps full season
-  & region detail.
+**Sidebar controls** (global — apply to Overview, Variety focus & Data)
 - **Planting season** — Fall (winter/spring/summer crop) or Summer (fall crop).
 - **Region** — Statewide plus the three districts (Watsonville/Salinas, Santa Maria,
   Oxnard). Regional detail exists for *fall-planted only*; summer is statewide.
 - **Varieties** — *Main* (the 10 largest, with the rest grouped as “Other / minor”)
   or *Detailed* (every reported variety individually, including minor cultivars and
   experimental breeding selections).
-- **View** — 100% share, absolute acres, or share-trend lines.
 - **Year range** slider.
+
+**Overview-tab controls** (local)
+- **Practice** — Total, Conventional, or Organic. Conventional/Organic are reported
+  statewide, all plantings combined, by variety, 2021 onward — so they live on the
+  Overview tab and don't change the other tabs.
+- **View** — 100% share, absolute acres, or share-trend lines.
 
 **Tabs**
 - **Overview** — stacked-area / line chart for the current selection, plus KPIs
   (total acres, variety count, proprietary share, largest variety, YoY change).
 - **Variety focus** — pick one or more varieties and see their trajectory across
   all districts at once, with a debut / peak / current stats table.
-- **Regional acreage** — strawberry planted area by growing region: a multi-source
+- **Regional context** — strawberry planted area by growing region: a multi-source
   trend (CA/FL via NASS *and* Commission; Mexico via SIAP/GAIN), a single-season
   snapshot across CA districts + Florida + Baja + Other Mexico, CA organic share by
   district, and qualitative Florida variety notes with source links.

@@ -7,7 +7,6 @@ Data: CA Strawberry Commission acreage surveys (variety x region x year, acres).
 from pathlib import Path
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
 
 st.set_page_config(page_title="CA Strawberry Varieties", page_icon="🍓", layout="wide")
@@ -92,54 +91,9 @@ def practice_variety(practice):
     return m[["year", "variety", "acres"]]
 
 
-# ----------------------------------------------------------------- sidebar
-st.sidebar.title("🍓 Strawberry varieties")
-st.sidebar.caption("CA Strawberry Commission acreage surveys")
-
-practice = st.sidebar.radio("Practice", ["Both (total)", "Conventional", "Organic"],
-                            help="Conventional / Organic are reported statewide, all plantings combined, "
-                                 "by variety, 2021 onward. “Both” = total acreage with full season & region detail.")
-org_mode = practice != "Both (total)"
-
-if org_mode:
-    season, region = "All plantings", "Statewide"
-    st.sidebar.radio("Planting season", ["All plantings"], disabled=True,
-                     help="Organic / conventional are reported for all plantings combined.")
-    st.sidebar.selectbox("Region", ["Statewide"], disabled=True,
-                         help="Organic / conventional variety detail is statewide only "
-                              "(see the Regional tab for organic totals by district).")
-else:
-    season = st.sidebar.radio("Planting season", ["Fall", "Summer"], horizontal=True,
-                              help="Fall-planted makes the winter/spring/summer crop; summer-planted makes "
-                                   "the fall crop. Regional detail exists only for fall-planted.")
-    if season == "Fall":
-        region = st.sidebar.selectbox("Region", FALL_REGIONS)
-    else:
-        region = "Statewide"
-        st.sidebar.selectbox("Region", ["Statewide"], disabled=True,
-                             help="Summer-planted is reported statewide only.")
-
-grouping = st.sidebar.radio("Varieties", ["Main varieties", "Detailed varieties"],
-                            help="Main = the biggest varieties, with the rest grouped as “Other / minor”. "
-                                 "Detailed = every reported variety individually, including minor and "
-                                 "experimental selections.")
-view = st.sidebar.radio("View", ["Share (100%)", "Acres", "Share trend lines"])
-
-if org_mode:
-    sub = practice_variety(practice)
-else:
-    sub = df[(df.season == season) & (df.region == region)][["year", "variety", "acres"]].copy()
-yrs = sorted(sub.year.unique())
-yr_lo, yr_hi = st.sidebar.select_slider("Year range", options=yrs, value=(yrs[0], yrs[-1]))
-sub = sub[(sub.year >= yr_lo) & (sub.year <= yr_hi)]
-
-sub["key"] = sub.variety
-sub = sub.groupby(["year", "key"], as_index=False).acres.sum()
-# drop varieties that are zero across the whole selected range (keeps the legend clean)
-_nz = sub.groupby("key").acres.sum()
-sub = sub[sub.key.isin(_nz[_nz > 0].index)]
-
 MAIN_N = 10
+COLOR_OVERRIDES = {"Proprietary": "#7a2648", "Other / minor": "#b9bec4",
+                   "Other": "#b9bec4", "Unreported / Underreported": "#d4d8dd"}
 
 
 def top_keys(frame, n):
@@ -153,72 +107,126 @@ def collapse_minor(frame, keep):
     return f.groupby(["year", "key"], as_index=False).acres.sum()
 
 
-keep = top_keys(sub, MAIN_N)
-plot_df = collapse_minor(sub, keep) if grouping == "Main varieties" else sub.copy()
-plot_df["share"] = plot_df.acres / plot_df.groupby("year").acres.transform("sum") * 100
+def group_sub(long_df, lo, hi):
+    """Long [year,variety,acres] -> grouped [year,key,acres], year-filtered, zero-varieties dropped."""
+    s = long_df[(long_df.year >= lo) & (long_df.year <= hi)][["year", "variety", "acres"]].copy()
+    s["key"] = s.variety
+    s = s.groupby(["year", "key"], as_index=False).acres.sum()
+    nz = s.groupby("key").acres.sum()
+    return s[s.key.isin(nz[nz > 0].index)]
 
-# consistent colors
-all_keys = list(dict.fromkeys(plot_df.key))
-cmap = {k: PALETTE[i % len(PALETTE)] for i, k in enumerate(sorted(all_keys))}
-for special, col in {"Proprietary": "#7a2648", "Other / minor": "#b9bec4",
-                     "Other": "#b9bec4", "Unreported / Underreported": "#d4d8dd"}.items():
-    if special in cmap:
-        cmap[special] = col
 
-# ----------------------------------------------------------------- header + KPIs
+def make_plot(sub, grouping):
+    keep = top_keys(sub, MAIN_N)
+    pdf = collapse_minor(sub, keep) if grouping == "Main varieties" else sub.copy()
+    pdf["share"] = pdf.acres / pdf.groupby("year").acres.transform("sum") * 100
+    keys = sorted(dict.fromkeys(pdf.key))
+    cmap = {k: PALETTE[i % len(PALETTE)] for i, k in enumerate(keys)}
+    for sp, col in COLOR_OVERRIDES.items():
+        if sp in cmap:
+            cmap[sp] = col
+    return pdf, cmap
+
+
+def show_kpis(sub):
+    yr = int(sub.year.max())
+    latest, prev = sub[sub.year == yr], sub[sub.year == yr - 1]
+    tot_now, tot_prev = latest.acres.sum(), prev.acres.sum()
+    prop = (latest[latest.key == "Proprietary"].acres.sum() / tot_now * 100) if tot_now else 0
+    top = latest.sort_values("acres", ascending=False).key.iloc[0] if len(latest) else "—"
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric(f"Total acres ({yr})", f"{tot_now:,.0f}",
+              f"{(tot_now - tot_prev) / tot_prev * 100:+.1f}% vs {yr-1}" if tot_prev else None)
+    c2.metric("Varieties reported", int((latest.acres > 0).sum()))
+    c3.metric("Proprietary share", f"{prop:.0f}%")
+    c4.metric("Largest variety", top)
+
+
+# ----------------------------------------------------------------- sidebar (global)
+st.sidebar.title("🍓 Strawberry varieties")
+st.sidebar.caption("CA Strawberry Commission acreage surveys")
+st.sidebar.header("Variety-view filters")
+st.sidebar.caption("Apply to the Overview, Variety focus & Data tabs.")
+
+season = st.sidebar.radio("Planting season", ["Fall", "Summer"], horizontal=True,
+                          help="Fall-planted makes the winter/spring/summer crop; summer-planted makes "
+                               "the fall crop. Regional (district) detail exists only for fall-planted.")
+if season == "Fall":
+    region = st.sidebar.selectbox("Region", FALL_REGIONS)
+else:
+    region = "Statewide"
+    st.sidebar.caption("Summer-planted is reported statewide only.")
+
+grouping = st.sidebar.radio("Varieties", ["Main varieties", "Detailed varieties"],
+                            help="Main = the biggest varieties, with the rest grouped as “Other / minor”. "
+                                 "Detailed = every reported variety individually, including minor and "
+                                 "experimental selections.")
+
+base = df[(df.season == season) & (df.region == region)][["year", "variety", "acres"]]
+yrs = sorted(base.year.unique())
+yr_lo, yr_hi = st.sidebar.select_slider("Year range", options=yrs, value=(yrs[0], yrs[-1]))
+
+sub_total = group_sub(base, yr_lo, yr_hi)   # the "Total" grain for Overview/Data
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Sources: CA Strawberry Commission acreage surveys; USDA-NASS; USDA-FAS GAIN. "
+                   "District variety detail = fall-planted only; organic/conventional splits = statewide.")
+
+# ----------------------------------------------------------------- header + tabs
 st.title("California Strawberry Variety Explorer")
-_season_lbl = season if org_mode else f"{season}-planted"
-st.caption(f"**{practice}** · **{_season_lbl}** · **{region}** · {yr_lo}–{yr_hi}")
-if org_mode:
-    st.info(f"Showing **{practice.lower()}** acreage by variety — reported statewide, all plantings "
-            "combined, 2021 onward. (Organic totals by district are on the Regional tab.)")
-
-latest = sub[sub.year == yr_hi]
-prev = sub[sub.year == (yr_hi - 1)]
-tot_now = latest.acres.sum()
-tot_prev = prev.acres.sum()
-prop_share = (latest[latest.key == "Proprietary"].acres.sum() / tot_now * 100) if tot_now else 0
-top_var = latest.sort_values("acres", ascending=False).key.iloc[0] if len(latest) else "—"
-n_var = int((latest.acres > 0).sum())
-
-c1, c2, c3, c4 = st.columns(4)
-c1.metric(f"Total acres ({yr_hi})", f"{tot_now:,.0f}",
-          f"{(tot_now - tot_prev) / tot_prev * 100:+.1f}% vs {yr_hi-1}" if tot_prev else None)
-c2.metric("Varieties reported", n_var)
-c3.metric("Proprietary share", f"{prop_share:.0f}%")
-c4.metric("Largest variety", top_var)
-
 tab_overview, tab_variety, tab_regional, tab_data = st.tabs(
-    ["📊 Overview", "🔎 Variety focus", "🗺 Regional acreage", "🗂 Data"])
+    ["📊 Overview", "🔎 Variety focus", "🗺 Regional context", "🗂 Data"])
 
 # ----------------------------------------------------------------- Overview
 with tab_overview:
-    order = top_keys(plot_df, 99)
-    if view == "Share (100%)":
-        fig = px.area(plot_df, x="year", y="share", color="key", color_discrete_map=cmap,
-                      category_orders={"key": order}, labels={"share": "Share of acreage (%)", "key": "Variety"})
-        fig.update_yaxes(range=[0, 100], ticksuffix="%")
-    elif view == "Acres":
-        fig = px.area(plot_df, x="year", y="acres", color="key", color_discrete_map=cmap,
-                      category_orders={"key": order}, labels={"acres": "Acres", "key": "Variety"})
+    oc1, oc2 = st.columns([1.1, 1])
+    practice = oc1.radio("Practice", ["Total", "Conventional", "Organic"], horizontal=True, key="ov_practice",
+                         help="Conventional / Organic are reported statewide, all plantings combined, "
+                              "by variety, 2021 onward.")
+    view = oc2.radio("View", ["Share (100%)", "Acres", "Share trend lines"], horizontal=True, key="ov_view")
+
+    if practice == "Total":
+        osub = sub_total
+        st.caption(f"**{season}-planted** · **{region}** · {yr_lo}–{yr_hi}")
     else:
-        fig = px.line(plot_df, x="year", y="share", color="key", color_discrete_map=cmap,
-                      category_orders={"key": order}, markers=True,
-                      labels={"share": "Share of acreage (%)", "key": "Variety"})
-        fig.update_yaxes(ticksuffix="%")
-    fig.update_layout(height=560, hovermode="x unified", legend_title="")
-    st.plotly_chart(fig, use_container_width=True)
-    if grouping == "Main varieties":
-        st.caption(f"The {MAIN_N} largest varieties shown individually; the rest grouped as "
-                   "“Other / minor”. Switch to *Detailed varieties* in the sidebar to break these out.")
+        osub = group_sub(practice_variety(practice), yr_lo, yr_hi)
+        st.caption(f"**{practice}** · statewide · all plantings combined · "
+                   f"{max(yr_lo, 2021)}–{yr_hi}  (organic/conventional is statewide-only, 2021+)")
+
+    if osub.empty:
+        st.info("No data for this selection. Conventional/Organic are available 2021 onward — widen the year range.")
     else:
-        st.caption("Every reported variety shown individually — including minor cultivars, experimental "
-                   "selections (breeding codes), and the “Other” / “Unreported” catch-alls. "
-                   "“Proprietary” = undisclosed private varieties (e.g., Driscoll's-type).")
+        show_kpis(osub)
+        pdf, cmap = make_plot(osub, grouping)
+        order = top_keys(pdf, 99)
+        if view == "Share (100%)":
+            fig = px.area(pdf, x="year", y="share", color="key", color_discrete_map=cmap,
+                          category_orders={"key": order}, labels={"share": "Share of acreage (%)", "key": "Variety"})
+            fig.update_yaxes(range=[0, 100], ticksuffix="%")
+        elif view == "Acres":
+            fig = px.area(pdf, x="year", y="acres", color="key", color_discrete_map=cmap,
+                          category_orders={"key": order}, labels={"acres": "Acres", "key": "Variety"})
+        else:
+            fig = px.line(pdf, x="year", y="share", color="key", color_discrete_map=cmap,
+                          category_orders={"key": order}, markers=True,
+                          labels={"share": "Share of acreage (%)", "key": "Variety"})
+            fig.update_yaxes(ticksuffix="%")
+        fig.update_layout(height=540, hovermode="x unified", legend_title="")
+        st.plotly_chart(fig, use_container_width=True)
+        if grouping == "Main varieties":
+            st.caption(f"The {MAIN_N} largest varieties shown individually; the rest grouped as "
+                       "“Other / minor”. Switch to *Detailed varieties* in the sidebar to break these out.")
+        else:
+            st.caption("Every reported variety shown individually — including minor cultivars, experimental "
+                       "selections (breeding codes), and the “Other” / “Unreported” catch-alls. "
+                       "“Proprietary” = undisclosed private varieties (e.g., Driscoll's-type).")
 
 # ----------------------------------------------------------------- Variety focus
 with tab_variety:
     st.subheader("Track a variety across regions")
+    st.caption(f"**{season}-planted**. " + ("Compared across Statewide + the three districts."
+               if season == "Fall" else "Summer-planted is statewide only, so this shows a single line; "
+               "switch to Fall in the sidebar for the district comparison."))
     pool = df[df.season == season]
     variety_opts = (pool.groupby("variety").acres.sum().sort_values(ascending=False))
     variety_opts = [v for v in variety_opts.index if variety_opts[v] > 0]
@@ -263,7 +271,9 @@ with tab_variety:
 
 # ----------------------------------------------------------------- Regional acreage
 with tab_regional:
-    st.subheader("Strawberry acreage by growing region")
+    st.subheader("Regional context — CA · Florida · Mexico")
+    st.caption("Compares **total planted area** across regions and data sources. This tab is independent "
+               "of the sidebar variety filters (it's a different grain — regions and totals, not CA varieties).")
 
     st.markdown("**Trend — planted area over time (thousand acres)**")
     rt = rtrend.copy()
@@ -271,8 +281,8 @@ with tab_regional:
     figt = px.line(rt.sort_values("year"), x="year", y="acres_k", color="region", line_dash="source",
                    markers=True,
                    color_discrete_map={"California": "#d6453f", "Florida": "#5b9bd5", "Mexico": "#f5b724"},
-                   line_dash_map={"NASS (planted)": "solid", "Commission (reported)": "dash", "SIAP / GAIN": "solid"},
-                   category_orders={"source": ["NASS (planted)", "Commission (reported)", "SIAP / GAIN"]},
+                   line_dash_map={"NASS (planted)": "solid", "USDA-FAS GAIN": "solid", "Commission (reported)": "dash"},
+                   category_orders={"source": ["NASS (planted)", "USDA-FAS GAIN", "Commission (reported)"]},
                    labels={"acres_k": "Planted area (1,000 ac)", "region": "", "source": "Source"})
     figt.update_layout(height=450, hovermode="x unified", legend_title="")
     st.plotly_chart(figt, use_container_width=True)
@@ -282,8 +292,8 @@ with tab_regional:
         "**Commission (reported)** series (dashed) runs higher for Florida because it counts tax-collector "
         "*ranch* acres (including greenbelt / non-planted land), so it overstates planted area; for California "
         "it is the survey's total reported acreage and tracks NASS closely. "
-        "Mexico: SIAP / USDA-FAS GAIN national area (ha→ac); pre-2022 points are SIAP on a different basis "
-        "than the 2022+ GAIN series (a known reporting break — treat the Mexico line as approximate).")
+        "Mexico: USDA-FAS GAIN national area (ha→ac, solid) plus the Commission's North-America estimate "
+        "(Baja + Other, dashed, last two seasons) — the two agree closely at ~37k ac.")
 
     st.divider()
     st.markdown("**Snapshot — a single season, by region (Commission's North-America frame)**")
@@ -336,18 +346,15 @@ with tab_regional:
 
 # ----------------------------------------------------------------- Data
 with tab_data:
-    raw = sub.rename(columns={"key": "variety"}).copy()
+    st.caption(f"Total acreage by variety · **{season}-planted** · **{region}** · {yr_lo}–{yr_hi}. "
+               "(Conventional/organic splits are on the Overview tab.)")
+    raw = sub_total.rename(columns={"key": "variety"}).copy()
     wide = raw.pivot_table(index="variety", columns="year", values="acres", aggfunc="sum").fillna(0)
     wide = wide.round(0).astype(int)
     wide.columns = [str(c) for c in wide.columns]
     st.dataframe(wide, use_container_width=True)
-    out = raw.assign(practice=practice, season=season, region=region)[
-        ["practice", "season", "region", "year", "variety", "acres"]]
+    out = raw.assign(season=season, region=region)[["season", "region", "year", "variety", "acres"]]
     st.download_button("⬇ Download current view (CSV)", out.to_csv(index=False),
-                       file_name=f"strawberry_varieties_{practice.split()[0]}_{season}_"
-                                 f"{region.replace('/', '-')}_{yr_lo}-{yr_hi}.csv".replace(" ", ""),
+                       file_name=f"strawberry_varieties_{season}_{region.replace('/', '-')}_"
+                                 f"{yr_lo}-{yr_hi}.csv".replace(" ", ""),
                        mime="text/csv")
-
-st.sidebar.markdown("---")
-st.sidebar.caption("Source: CA Strawberry Commission acreage surveys; USDA-NASS; USDA-FAS GAIN / SIAP. "
-                   "Regional variety detail = fall-planted only; organic/conventional = statewide.")
