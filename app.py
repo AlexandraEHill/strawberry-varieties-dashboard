@@ -155,7 +155,7 @@ with st.sidebar.expander("About & how to use", expanded=False):
         "Mexico variety notes (its own sources).")
 #st.sidebar.markdown("---")
 #st.sidebar.caption("District variety detail = fall-planted only. "
-                   "Conventional / organic splits = statewide, all plantings, 2021+.")
+#                   "Conventional / organic splits = statewide, all plantings, 2021+.")
 
 st.title("California Strawberry Variety Explorer")
 tab_overview, tab_variety, tab_regional = st.tabs(
