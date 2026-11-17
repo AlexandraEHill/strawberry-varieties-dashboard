@@ -27,19 +27,18 @@ Overview-tab controls:
 - **Season** (Fall/Summer) and **Region** (Statewide + 3 fall districts).
 - **Year range** slider.
 
-Other tabs carry their own controls: Variety focus has a Season toggle + variety picker
-+ metric; Regional context has a season-year slider; Data mirrors the Overview selection.
+Other tabs carry their own controls: CA Varieties Focus has a Season toggle + variety
+picker + metric; the Comparison tab has a season-year slider.
 
 **Tabs**
-- **Overview** — stacked-area / line chart for the current selection, plus KPIs
-  (total acres, variety count, proprietary share, largest variety, YoY change).
-- **Variety focus** — pick one or more varieties and see their trajectory across
+- **CA Varieties Overview** — stacked-area / line chart for the current selection, plus
+  KPIs (total acres, variety count, proprietary share, largest variety, YoY change).
+- **CA Varieties Focus** — pick one or more varieties and see their trajectory across
   all districts at once, with a debut / peak / current stats table.
-- **Regional context** — strawberry planted area by growing region: a multi-source
-  trend (CA/FL via NASS *and* Commission; Mexico via SIAP/GAIN), a single-season
-  snapshot across CA districts + Florida + Baja + Other Mexico, CA organic share by
-  district, and qualitative Florida variety notes with source links.
-- **Data** — the current view as a pivot table, with a CSV download button.
+- **CA · MX · FL Comparison** — strawberry planted area by growing region: a multi-source
+  trend (CA/FL via NASS *and* Commission; Mexico via GAIN + Commission), a single-season
+  snapshot across CA districts + Florida + Baja + Other Mexico, and qualitative Florida &
+  Mexico variety notes with source links (incl. the USDA-FAS GAIN reports for Mexico).
 
 ## Password protection
 

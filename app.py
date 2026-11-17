@@ -148,17 +148,17 @@ st.sidebar.caption("CA Strawberry Commission acreage surveys · USDA-NASS · USD
 with st.sidebar.expander("About & how to use", expanded=False):
     st.markdown(
         "Each tab is self-contained — **its controls sit at the top of the tab**.\n\n"
-        "- **Overview** — the CA variety mix over time (practice, season, region, year).\n"
-        "- **Variety focus** — one or more varieties tracked across districts.\n"
-        "- **Regional context** — CA vs. Florida vs. Mexico planted area (its own sources).\n"
-        "- **Data** — the table and download behind the current Overview selection.")
+        "- **CA Varieties Overview** — the CA variety mix over time (practice, season, region, year).\n"
+        "- **CA Varieties Focus** — one or more varieties tracked across districts.\n"
+        "- **CA · MX · FL Comparison** — CA vs. Florida vs. Mexico planted area, plus Florida & "
+        "Mexico variety notes (its own sources).")
 st.sidebar.markdown("---")
 st.sidebar.caption("District variety detail = fall-planted only. "
                    "Conventional / organic splits = statewide, all plantings, 2021+.")
 
 st.title("California Strawberry Variety Explorer")
-tab_overview, tab_variety, tab_regional, tab_data = st.tabs(
-    ["📊 Overview", "🔎 Variety focus", "🗺 Regional context", "🗂 Data"])
+tab_overview, tab_variety, tab_regional = st.tabs(
+    ["📊 CA Varieties Overview", "🔎 CA Varieties Focus", "🗺 CA · MX · FL Comparison"])
 
 # ----------------------------------------------------------------- Overview
 with tab_overview:
@@ -207,6 +207,8 @@ with tab_overview:
                           labels={"share": "Share of acreage (%)", "key": "Variety"})
             fig.update_yaxes(ticksuffix="%")
         fig.update_layout(height=540, hovermode="x unified", legend_title="")
+        fig.update_traces(hovertemplate=("%{fullData.name}: %{y:,.0f} ac<extra></extra>" if view == "Acres"
+                                         else "%{fullData.name}: %{y:.1f}%<extra></extra>"))
         st.plotly_chart(fig, use_container_width=True)
         if grouping == "Main varieties":
             st.caption(f"The {MAIN_N} largest varieties shown individually; the rest grouped as "
@@ -244,6 +246,8 @@ with tab_variety:
                       category_orders={"region": regions, "variety": picks}, labels={ycol: ylab})
         fig.update_layout(height=420 if len(picks) <= 3 else 760, legend_title="Region")
         fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
+        fig.update_traces(hovertemplate=("%{fullData.name}: %{y:.1f}%<extra></extra>" if metric == "Share (%)"
+                                         else "%{fullData.name}: %{y:,.0f} ac<extra></extra>"))
         if metric == "Share (%)":
             fig.update_yaxes(ticksuffix="%")
         st.plotly_chart(fig, use_container_width=True)
@@ -282,6 +286,7 @@ with tab_regional:
                    category_orders={"source": ["NASS (planted)", "USDA-FAS GAIN", "Commission (reported)"]},
                    labels={"acres_k": "Planted area (1,000 ac)", "region": "", "source": "Source"})
     figt.update_layout(height=450, hovermode="x unified", legend_title="")
+    figt.update_traces(hovertemplate="%{fullData.name}: %{y:.1f}k ac<extra></extra>")
     st.plotly_chart(figt, use_container_width=True)
     st.caption(
         "**How to read Florida vs. California.** USDA-NASS *acres planted* (solid) is the apples-to-apples "
@@ -301,36 +306,26 @@ with tab_regional:
                   color_discrete_map={"California": "#d6453f", "Florida": "#5b9bd5", "Mexico": "#f5b724"},
                   labels={"acres": "Planted acres", "region": "", "group": ""})
     figs.update_layout(height=430)
+    figs.update_traces(hovertemplate="%{y}: %{x:,.0f} ac<extra></extra>")
     st.plotly_chart(figs, use_container_width=True)
     st.caption("CA = Commission district acreage (fall + summer). Florida = Commission tax-collector ranch "
                "acreage. Mexico (Baja + Other) = industry estimates in the Commission survey — reported only "
                "for the last two seasons. Measures differ by region; treat cross-region levels as indicative.")
 
     st.divider()
-    st.markdown("**California organic share, by district**")
-    ot = ort.merge(
-        rsnap.assign(region=rsnap.region.str.replace("CA · ", "", regex=False))
-             .groupby(["region", "year"], as_index=False).acres.sum().rename(columns={"acres": "total"}),
-        on=["region", "year"], how="inner")
-    ot["organic_pct"] = ot.organic_acres / ot.total * 100
-    figo = px.line(ot.sort_values("year"), x="year", y="organic_pct", color="region", markers=True,
-                   labels={"organic_pct": "Organic share of acreage (%)", "region": ""})
-    figo.update_layout(height=360, hovermode="x unified")
-    figo.update_yaxes(ticksuffix="%")
-    st.plotly_chart(figo, use_container_width=True)
-    st.caption("Organic as a share of each district's total planted acreage (fall + summer), 2022–2026. "
-               "Watsonville/Salinas is by far the most organic district.")
+    st.subheader("Florida & Mexico variety trends")
+    st.caption("Neither Florida nor Mexico publishes a CA-style variety-acreage survey, so these are "
+               "qualitative — named cultivars and directional shifts from USDA and trade sources.")
 
-    with st.expander("Florida variety notes (qualitative)"):
+    with st.expander("🌴 Florida — Radiance → Brilliance", expanded=True):
         st.markdown(
-            "Florida has no public variety-acreage survey, but the trend mirrors California's old→new "
-            "transition — driven by UF/IFAS releases:\n\n"
+            "Florida's mix mirrors California's old→new transition, driven by UF/IFAS releases:\n\n"
             "- **Florida Radiance** — once dominant (~75% of acreage pre-2018), now largely displaced.\n"
             "- **Florida Brilliance** — the new leader, ~55–60% of acreage in recent seasons.\n"
             "- **Sweet Sensation® ‘Florida127’** — ~25–30%, now sliding.\n"
             "- **Medallion™** — a 2020 release gaining ground (~20%).\n"
             "- **Festival / Florida Beauty** — older, fading.\n\n"
-            "Shares are approximate spot estimates from UF/IFAS and trade press, not a consistent annual series.\n\n"
+            "Shares are approximate spot estimates, not a consistent annual series.\n\n"
             "**Sources**\n"
             "- [UF/IFAS — breeding program & Radiance ~75% (2016)](https://blogs.ifas.ufl.edu/news/2016/02/17/national-strawberry-day-time-to-recognize-ufifas-breeding-program/)\n"
             "- [USDA-ARS — ‘Florida Brilliance’ release](https://www.ars.usda.gov/research/publications/publication/?seqNo115=366363)\n"
@@ -341,21 +336,17 @@ with tab_regional:
             "- [Florida Strawberry (FFSP) — ‘Florida Brilliance’ profile](https://ffsp.net/varieties/strawberry/florida-brilliance/)\n"
             "- [Agronometrics — Florida's $300M strawberry industry](https://stories.agronometrics.com/researchers-play-key-role-in-floridas-300-million-strawberry-industry/)")
 
-# ----------------------------------------------------------------- Data
-with tab_data:
-    st.caption(f"Numbers behind the **Overview** chart — {scope} · {yr_lo}–{yr_hi}. "
-               "Change the selection on the Overview tab.")
-    if osub.empty:
-        st.info("Nothing to show — adjust the selection on the Overview tab.")
-    else:
-        raw = osub.rename(columns={"key": "variety"}).copy()
-        wide = raw.pivot_table(index="variety", columns="year", values="acres", aggfunc="sum").fillna(0)
-        wide = wide.round(0).astype(int)
-        wide.columns = [str(c) for c in wide.columns]
-        st.dataframe(wide, use_container_width=True)
-        out = raw.assign(practice=practice, season=season, region=region)[
-            ["practice", "season", "region", "year", "variety", "acres"]]
-        st.download_button("⬇ Download current view (CSV)", out.to_csv(index=False),
-                           file_name=f"strawberry_{practice}_{season}_{region.replace('/', '-')}_"
-                                     f"{yr_lo}-{yr_hi}.csv".replace(" ", ""),
-                           mime="text/csv")
+    with st.expander("🌵 Mexico — imported genetics, consolidating", expanded=True):
+        st.markdown(
+            "Unlike the blackberry/blueberry turnover elsewhere in Mexico, **strawberry is not a dramatic "
+            "public→proprietary shift**. Mexican strawberry largely plants **imported California / Florida "
+            "genetics**:\n\n"
+            "- **Festival** and **Camarosa** — long-standing workhorses.\n"
+            "- **Albion, San Andreas, Sweet Charlie** — UC/other day-neutrals and short-day types in the mix.\n"
+            "- The main trend is **consolidation to fewer varieties** for more uniform, targeted management "
+            "— not a wave of new proprietary cultivars.\n\n"
+            "Production is concentrated in **Michoacán, Baja California, Guanajuato and Jalisco**; the "
+            "USDA-FAS GAIN Berry Annuals track named varieties and planted area but give no acreage split.\n\n"
+            "**Sources**\n"
+            "- [USDA-FAS GAIN — Berry Annual, Guadalajara (MX2026-0015)](https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Berry+Annual+Voluntary_Guadalajara_Mexico_MX2026-0015.pdf)\n"
+            "- [USDA-FAS GAIN — Berry Annual, Guadalajara (MX2025-0005)](https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Berry+Annual+Voluntary_Guadalajara_Mexico_MX2025-0005.pdf)")
