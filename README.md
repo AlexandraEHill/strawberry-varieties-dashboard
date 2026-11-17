@@ -15,20 +15,20 @@ It opens in your browser at http://localhost:8501.
 
 ## What it does
 
-**Sidebar controls** (global — apply to Overview, Variety focus & Data)
-- **Planting season** — Fall (winter/spring/summer crop) or Summer (fall crop).
-- **Region** — Statewide plus the three districts (Watsonville/Salinas, Santa Maria,
-  Oxnard). Regional detail exists for *fall-planted only*; summer is statewide.
-- **Varieties** — *Main* (the 10 largest, with the rest grouped as “Other / minor”)
-  or *Detailed* (every reported variety individually, including minor cultivars and
-  experimental breeding selections).
+**Controls live on each tab** (the sidebar is just branding + an "About" note — there
+are no global filters, so every control visibly affects the tab you're on).
+
+Overview-tab controls:
+- **Practice** — Total, Conventional, or Organic. Conventional/Organic are reported
+  statewide, all plantings combined, by variety, 2021 onward (so Season/Region are
+  replaced by a "statewide / all plantings" note in those modes).
+- **Varieties** — *Main* (the 10 largest + “Other / minor”) or *Detailed* (every variety).
+- **View** — 100% share, absolute acres, or share-trend lines.
+- **Season** (Fall/Summer) and **Region** (Statewide + 3 fall districts).
 - **Year range** slider.
 
-**Overview-tab controls** (local)
-- **Practice** — Total, Conventional, or Organic. Conventional/Organic are reported
-  statewide, all plantings combined, by variety, 2021 onward — so they live on the
-  Overview tab and don't change the other tabs.
-- **View** — 100% share, absolute acres, or share-trend lines.
+Other tabs carry their own controls: Variety focus has a Season toggle + variety picker
++ metric; Regional context has a season-year slider; Data mirrors the Overview selection.
 
 **Tabs**
 - **Overview** — stacked-area / line chart for the current selection, plus KPIs

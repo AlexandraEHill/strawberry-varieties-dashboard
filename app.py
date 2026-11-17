@@ -142,57 +142,52 @@ def show_kpis(sub):
     c4.metric("Largest variety", top)
 
 
-# ----------------------------------------------------------------- sidebar (global)
+# ----------------------------------------------------------------- sidebar (branding / about only)
 st.sidebar.title("🍓 Strawberry varieties")
-st.sidebar.caption("CA Strawberry Commission acreage surveys")
-st.sidebar.header("Variety-view filters")
-st.sidebar.caption("Apply to the Overview, Variety focus & Data tabs.")
-
-season = st.sidebar.radio("Planting season", ["Fall", "Summer"], horizontal=True,
-                          help="Fall-planted makes the winter/spring/summer crop; summer-planted makes "
-                               "the fall crop. Regional (district) detail exists only for fall-planted.")
-if season == "Fall":
-    region = st.sidebar.selectbox("Region", FALL_REGIONS)
-else:
-    region = "Statewide"
-    st.sidebar.caption("Summer-planted is reported statewide only.")
-
-grouping = st.sidebar.radio("Varieties", ["Main varieties", "Detailed varieties"],
-                            help="Main = the biggest varieties, with the rest grouped as “Other / minor”. "
-                                 "Detailed = every reported variety individually, including minor and "
-                                 "experimental selections.")
-
-base = df[(df.season == season) & (df.region == region)][["year", "variety", "acres"]]
-yrs = sorted(base.year.unique())
-yr_lo, yr_hi = st.sidebar.select_slider("Year range", options=yrs, value=(yrs[0], yrs[-1]))
-
-sub_total = group_sub(base, yr_lo, yr_hi)   # the "Total" grain for Overview/Data
-
+st.sidebar.caption("CA Strawberry Commission acreage surveys · USDA-NASS · USDA-FAS GAIN")
+with st.sidebar.expander("About & how to use", expanded=False):
+    st.markdown(
+        "Each tab is self-contained — **its controls sit at the top of the tab**.\n\n"
+        "- **Overview** — the CA variety mix over time (practice, season, region, year).\n"
+        "- **Variety focus** — one or more varieties tracked across districts.\n"
+        "- **Regional context** — CA vs. Florida vs. Mexico planted area (its own sources).\n"
+        "- **Data** — the table and download behind the current Overview selection.")
 st.sidebar.markdown("---")
-st.sidebar.caption("Sources: CA Strawberry Commission acreage surveys; USDA-NASS; USDA-FAS GAIN. "
-                   "District variety detail = fall-planted only; organic/conventional splits = statewide.")
+st.sidebar.caption("District variety detail = fall-planted only. "
+                   "Conventional / organic splits = statewide, all plantings, 2021+.")
 
-# ----------------------------------------------------------------- header + tabs
 st.title("California Strawberry Variety Explorer")
 tab_overview, tab_variety, tab_regional, tab_data = st.tabs(
     ["📊 Overview", "🔎 Variety focus", "🗺 Regional context", "🗂 Data"])
 
 # ----------------------------------------------------------------- Overview
 with tab_overview:
-    oc1, oc2 = st.columns([1.1, 1])
-    practice = oc1.radio("Practice", ["Total", "Conventional", "Organic"], horizontal=True, key="ov_practice",
-                         help="Conventional / Organic are reported statewide, all plantings combined, "
-                              "by variety, 2021 onward.")
-    view = oc2.radio("View", ["Share (100%)", "Acres", "Share trend lines"], horizontal=True, key="ov_view")
-
+    practice = st.radio("Practice", ["Total", "Conventional", "Organic"], horizontal=True, key="ov_practice",
+                        help="Conventional / Organic are reported statewide, all plantings combined, "
+                             "by variety, 2021 onward.")
+    cc = st.columns(4)
+    grouping = cc[0].radio("Varieties", ["Main varieties", "Detailed varieties"], key="ov_grp")
+    view = cc[1].selectbox("View", ["Share (100%)", "Acres", "Share trend lines"], key="ov_view")
     if practice == "Total":
-        osub = sub_total
-        st.caption(f"**{season}-planted** · **{region}** · {yr_lo}–{yr_hi}")
+        season = cc[2].radio("Season", ["Fall", "Summer"], horizontal=True, key="ov_season")
+        if season == "Fall":
+            region = cc[3].selectbox("Region", FALL_REGIONS, key="ov_region")
+        else:
+            region = "Statewide"
+            cc[3].markdown("**Region**"); cc[3].caption("Statewide — summer is statewide-only")
+        base = df[(df.season == season) & (df.region == region)][["year", "variety", "acres"]]
+        scope = f"{season}-planted · {region}"
     else:
-        osub = group_sub(practice_variety(practice), yr_lo, yr_hi)
-        st.caption(f"**{practice}** · statewide · all plantings combined · "
-                   f"{max(yr_lo, 2021)}–{yr_hi}  (organic/conventional is statewide-only, 2021+)")
+        season, region = "All plantings", "Statewide"
+        cc[2].markdown("**Scope**"); cc[2].caption("Statewide")
+        cc[3].markdown("**Plantings**"); cc[3].caption("All plantings combined · 2021+")
+        base = practice_variety(practice)
+        scope = f"{practice} · statewide · all plantings"
+    yopts = sorted(base.year.unique())
+    yr_lo, yr_hi = st.select_slider("Year range", options=yopts, value=(yopts[0], yopts[-1]), key="ov_years")
+    st.caption(f"**{scope}** · {yr_lo}–{yr_hi}")
 
+    osub = group_sub(base, yr_lo, yr_hi)
     if osub.empty:
         st.info("No data for this selection. Conventional/Organic are available 2021 onward — widen the year range.")
     else:
@@ -215,7 +210,7 @@ with tab_overview:
         st.plotly_chart(fig, use_container_width=True)
         if grouping == "Main varieties":
             st.caption(f"The {MAIN_N} largest varieties shown individually; the rest grouped as "
-                       "“Other / minor”. Switch to *Detailed varieties* in the sidebar to break these out.")
+                       "“Other / minor”. Switch to *Detailed varieties* above to break these out.")
         else:
             st.caption("Every reported variety shown individually — including minor cultivars, experimental "
                        "selections (breeding codes), and the “Other” / “Unreported” catch-alls. "
@@ -224,19 +219,21 @@ with tab_overview:
 # ----------------------------------------------------------------- Variety focus
 with tab_variety:
     st.subheader("Track a variety across regions")
-    st.caption(f"**{season}-planted**. " + ("Compared across Statewide + the three districts."
-               if season == "Fall" else "Summer-planted is statewide only, so this shows a single line; "
-               "switch to Fall in the sidebar for the district comparison."))
-    pool = df[df.season == season]
+    vseason = st.radio("Season", ["Fall", "Summer"], horizontal=True, key="vf_season")
+    st.caption("Fall-planted is compared across Statewide + the three districts. "
+               "Summer-planted is statewide only (a single line)." if vseason == "Fall"
+               else "Summer-planted is statewide only, so this shows a single line — "
+               "switch to Fall for the district comparison.")
+    pool = df[df.season == vseason]
     variety_opts = (pool.groupby("variety").acres.sum().sort_values(ascending=False))
     variety_opts = [v for v in variety_opts.index if variety_opts[v] > 0]
     default = [v for v in ["Monterey", "Albion", "Proprietary", "Fronteras", "Eclipse"] if v in variety_opts][:3]
     picks = st.multiselect("Varieties", variety_opts, default=default or variety_opts[:2])
 
     if picks:
-        regions = FALL_REGIONS if season == "Fall" else ["Statewide"]
-        vf = df[(df.season == season) & (df.region.isin(regions)) & (df.variety.isin(picks))].copy()
-        tot = (df[(df.season == season) & (df.region.isin(regions))]
+        regions = FALL_REGIONS if vseason == "Fall" else ["Statewide"]
+        vf = df[(df.season == vseason) & (df.region.isin(regions)) & (df.variety.isin(picks))].copy()
+        tot = (df[(df.season == vseason) & (df.region.isin(regions))]
                .groupby(["region", "year"], as_index=False).acres.sum().rename(columns={"acres": "tot"}))
         vf = vf.merge(tot, on=["region", "year"], how="left")
         vf["share"] = vf.acres / vf.tot * 100
@@ -346,15 +343,19 @@ with tab_regional:
 
 # ----------------------------------------------------------------- Data
 with tab_data:
-    st.caption(f"Total acreage by variety · **{season}-planted** · **{region}** · {yr_lo}–{yr_hi}. "
-               "(Conventional/organic splits are on the Overview tab.)")
-    raw = sub_total.rename(columns={"key": "variety"}).copy()
-    wide = raw.pivot_table(index="variety", columns="year", values="acres", aggfunc="sum").fillna(0)
-    wide = wide.round(0).astype(int)
-    wide.columns = [str(c) for c in wide.columns]
-    st.dataframe(wide, use_container_width=True)
-    out = raw.assign(season=season, region=region)[["season", "region", "year", "variety", "acres"]]
-    st.download_button("⬇ Download current view (CSV)", out.to_csv(index=False),
-                       file_name=f"strawberry_varieties_{season}_{region.replace('/', '-')}_"
-                                 f"{yr_lo}-{yr_hi}.csv".replace(" ", ""),
-                       mime="text/csv")
+    st.caption(f"Numbers behind the **Overview** chart — {scope} · {yr_lo}–{yr_hi}. "
+               "Change the selection on the Overview tab.")
+    if osub.empty:
+        st.info("Nothing to show — adjust the selection on the Overview tab.")
+    else:
+        raw = osub.rename(columns={"key": "variety"}).copy()
+        wide = raw.pivot_table(index="variety", columns="year", values="acres", aggfunc="sum").fillna(0)
+        wide = wide.round(0).astype(int)
+        wide.columns = [str(c) for c in wide.columns]
+        st.dataframe(wide, use_container_width=True)
+        out = raw.assign(practice=practice, season=season, region=region)[
+            ["practice", "season", "region", "year", "variety", "acres"]]
+        st.download_button("⬇ Download current view (CSV)", out.to_csv(index=False),
+                           file_name=f"strawberry_{practice}_{season}_{region.replace('/', '-')}_"
+                                     f"{yr_lo}-{yr_hi}.csv".replace(" ", ""),
+                           mime="text/csv")
