@@ -1,0 +1,686 @@
+district,year,variety,acres
+Watsonville/Salinas,2010,Albion,7884.0
+Watsonville/Salinas,2010,Benicia,0.0
+Watsonville/Salinas,2010,Camarosa,10.0
+Watsonville/Salinas,2010,Chandler,21.0
+Watsonville/Salinas,2010,Monterey,104.0
+Watsonville/Salinas,2010,Other,130.0
+Watsonville/Salinas,2010,Proprietary,5368.0
+Watsonville/Salinas,2010,Radiance,0.0
+Watsonville/Salinas,2010,San Andreas,611.0
+Watsonville/Salinas,2010,Sweet Ann,0.0
+Watsonville/Salinas,2011,Albion,8291.0
+Watsonville/Salinas,2011,Benicia,0.0
+Watsonville/Salinas,2011,Camarosa,44.0
+Watsonville/Salinas,2011,Chandler,21.0
+Watsonville/Salinas,2011,Monterey,258.0
+Watsonville/Salinas,2011,Other,7.0
+Watsonville/Salinas,2011,Proprietary,5632.0
+Watsonville/Salinas,2011,Radiance,0.0
+Watsonville/Salinas,2011,San Andreas,383.0
+Watsonville/Salinas,2011,Sweet Ann,20.0
+Watsonville/Salinas,2012,Albion,8191.0
+Watsonville/Salinas,2012,Benicia,0.0
+Watsonville/Salinas,2012,Camarosa,0.0
+Watsonville/Salinas,2012,Chandler,30.0
+Watsonville/Salinas,2012,Monterey,509.0
+Watsonville/Salinas,2012,Other,5.0
+Watsonville/Salinas,2012,Proprietary,5919.0
+Watsonville/Salinas,2012,Radiance,0.0
+Watsonville/Salinas,2012,San Andreas,512.0
+Watsonville/Salinas,2012,Sweet Ann,10.0
+Watsonville/Salinas,2012,Cabrillo,0.0
+Watsonville/Salinas,2013,Albion,6356.0
+Watsonville/Salinas,2013,Benicia,25.0
+Watsonville/Salinas,2013,Camarosa,0.0
+Watsonville/Salinas,2013,Chandler,23.0
+Watsonville/Salinas,2013,Monterey,1584.0
+Watsonville/Salinas,2013,Other,0.0
+Watsonville/Salinas,2013,Proprietary,6497.0
+Watsonville/Salinas,2013,Radiance,0.0
+Watsonville/Salinas,2013,San Andreas,586.0
+Watsonville/Salinas,2013,Sweet Ann,33.0
+Watsonville/Salinas,2013,Cabrillo,0.0
+Watsonville/Salinas,2014,Albion,4223.0
+Watsonville/Salinas,2014,Benicia,0.0
+Watsonville/Salinas,2014,Camarosa,0.0
+Watsonville/Salinas,2014,Chandler,18.0
+Watsonville/Salinas,2014,Monterey,3234.0
+Watsonville/Salinas,2014,Other,22.0
+Watsonville/Salinas,2014,Proprietary,6464.0
+Watsonville/Salinas,2014,Radiance,60.0
+Watsonville/Salinas,2014,San Andreas,487.0
+Watsonville/Salinas,2014,Sweet Ann,254.0
+Watsonville/Salinas,2014,Cabrillo,0.0
+Watsonville/Salinas,2015,Albion,2415.0
+Watsonville/Salinas,2015,Benicia,0.0
+Watsonville/Salinas,2015,Camarosa,0.0
+Watsonville/Salinas,2015,Chandler,14.0
+Watsonville/Salinas,2015,Monterey,4439.0
+Watsonville/Salinas,2015,Other,15.0
+Watsonville/Salinas,2015,Proprietary,6516.0
+Watsonville/Salinas,2015,San Andreas,623.0
+Watsonville/Salinas,2015,Sweet Ann,307.0
+Watsonville/Salinas,2015,Cabrillo,0.0
+Watsonville/Salinas,2015,Radiance,0.0
+Watsonville/Salinas,2016,Albion,888.0
+Watsonville/Salinas,2016,Benicia,0.0
+Watsonville/Salinas,2016,Cabrillo,201.0
+Watsonville/Salinas,2016,Chandler,14.0
+Watsonville/Salinas,2016,Monterey,4847.0
+Watsonville/Salinas,2016,Other,24.0
+Watsonville/Salinas,2016,Proprietary,6502.0
+Watsonville/Salinas,2016,Radiance,0.0
+Watsonville/Salinas,2016,San Andreas,403.0
+Watsonville/Salinas,2016,Sweet Ann,431.0
+Watsonville/Salinas,2017,Albion,458.0
+Watsonville/Salinas,2017,Benicia,0.0
+Watsonville/Salinas,2017,Cabrillo,1200.0
+Watsonville/Salinas,2017,Chandler,14.0
+Watsonville/Salinas,2017,Monterey,4725.0
+Watsonville/Salinas,2017,Other,43.0
+Watsonville/Salinas,2017,Proprietary,6648.0
+Watsonville/Salinas,2017,Radiance,0.0
+Watsonville/Salinas,2017,San Andreas,333.0
+Watsonville/Salinas,2017,Sweet Ann,142.0
+Watsonville/Salinas,2018,Albion,205.0
+Watsonville/Salinas,2018,Cabrillo,999.0
+Watsonville/Salinas,2018,Monterey,5040.0
+Watsonville/Salinas,2018,Other,51.0
+Watsonville/Salinas,2018,Proprietary,6186.0
+Watsonville/Salinas,2018,Radiance,0.0
+Watsonville/Salinas,2018,San Andreas,274.0
+Watsonville/Salinas,2018,Sweet Ann,363.0
+Watsonville/Salinas,2018,Royal Royce,0.0
+Watsonville/Salinas,2018,Unreported / Underreported,0.0
+Watsonville/Salinas,2018,Valiant,0.0
+Watsonville/Salinas,2019,Albion,69.0
+Watsonville/Salinas,2019,Cabrillo,730.0
+Watsonville/Salinas,2019,Monterey,4523.0
+Watsonville/Salinas,2019,Other,92.0
+Watsonville/Salinas,2019,Proprietary,5744.0
+Watsonville/Salinas,2019,San Andreas,234.0
+Watsonville/Salinas,2019,Sweet Ann,210.0
+Watsonville/Salinas,2019,Royal Royce,0.0
+Watsonville/Salinas,2019,Unreported / Underreported,0.0
+Watsonville/Salinas,2019,Valiant,0.0
+Watsonville/Salinas,2019,Moxie,0.0
+Watsonville/Salinas,2020,Albion,59.0
+Watsonville/Salinas,2020,Cabrillo,913.0
+Watsonville/Salinas,2020,Monterey,4657.0
+Watsonville/Salinas,2020,Other,20.0
+Watsonville/Salinas,2020,Proprietary,5829.0
+Watsonville/Salinas,2020,San Andreas,235.0
+Watsonville/Salinas,2020,Sweet Ann,87.0
+Watsonville/Salinas,2020,Royal Royce,0.0
+Watsonville/Salinas,2020,Unreported / Underreported,0.0
+Watsonville/Salinas,2020,Valiant,0.0
+Watsonville/Salinas,2020,Moxie,0.0
+Watsonville/Salinas,2021,Albion,79.0
+Watsonville/Salinas,2021,Cabrillo,960.0
+Watsonville/Salinas,2021,Monterey,5062.0
+Watsonville/Salinas,2021,Other,9.0
+Watsonville/Salinas,2021,Proprietary,5666.0
+Watsonville/Salinas,2021,Royal Royce,34.0
+Watsonville/Salinas,2021,San Andreas,252.0
+Watsonville/Salinas,2021,Sweet Ann,58.0
+Watsonville/Salinas,2021,Unreported / Underreported,115.0
+Watsonville/Salinas,2021,Valiant,5.0
+Watsonville/Salinas,2021,Moxie,0.0
+Watsonville/Salinas,2021,Alturas,0.0
+Watsonville/Salinas,2021,Fronteras,5.0
+Watsonville/Salinas,2022,Albion,48.0
+Watsonville/Salinas,2022,Cabrillo,1080.0
+Watsonville/Salinas,2022,Monterey,5077.0
+Watsonville/Salinas,2022,Other,209.0
+Watsonville/Salinas,2022,Proprietary,6059.0
+Watsonville/Salinas,2022,Royal Royce,42.0
+Watsonville/Salinas,2022,San Andreas,414.0
+Watsonville/Salinas,2022,Sweet Ann,147.0
+Watsonville/Salinas,2022,Unreported / Underreported,68.0
+Watsonville/Salinas,2022,Valiant,43.0
+Watsonville/Salinas,2022,Moxie,13.0
+Watsonville/Salinas,2022,Alturas,0.0
+Watsonville/Salinas,2022,Fronteras,3.0
+Watsonville/Salinas,2022,P18-009R,0.0
+Watsonville/Salinas,2022,Artesia,0.0
+Watsonville/Salinas,2022,Carpinteria,0.0
+Watsonville/Salinas,2022,PS-13.467.089,0.0
+Watsonville/Salinas,2022,Eclipse,0.0
+Watsonville/Salinas,2023,Cabrillo,978.0
+Watsonville/Salinas,2023,Monterey,5246.0
+Watsonville/Salinas,2023,Other,111.0
+Watsonville/Salinas,2023,Proprietary,5895.0
+Watsonville/Salinas,2023,Royal Royce,25.0
+Watsonville/Salinas,2023,San Andreas,323.0
+Watsonville/Salinas,2023,Sweet Ann,37.0
+Watsonville/Salinas,2023,Unreported / Underreported,242.0
+Watsonville/Salinas,2023,Moxie,28.0
+Watsonville/Salinas,2023,Albion,16.0
+Watsonville/Salinas,2023,Alturas,0.0
+Watsonville/Salinas,2023,Fronteras,20.0
+Watsonville/Salinas,2023,P18-009R,0.0
+Watsonville/Salinas,2023,Artesia,0.0
+Watsonville/Salinas,2023,Carpinteria,0.0
+Watsonville/Salinas,2023,PS-13.467.089,0.0
+Watsonville/Salinas,2023,Eclipse,0.0
+Watsonville/Salinas,2024,Albion,26.0
+Watsonville/Salinas,2024,Cabrillo,1119.0
+Watsonville/Salinas,2024,Monterey,4976.0
+Watsonville/Salinas,2024,Other,99.0
+Watsonville/Salinas,2024,Proprietary,6435.0
+Watsonville/Salinas,2024,San Andreas,314.0
+Watsonville/Salinas,2024,Sweet Ann,48.0
+Watsonville/Salinas,2024,Unreported / Underreported,140.0
+Watsonville/Salinas,2024,Alturas,24.0
+Watsonville/Salinas,2024,Fronteras,6.0
+Watsonville/Salinas,2024,Royal Royce,9.0
+Watsonville/Salinas,2024,P18-009R,0.0
+Watsonville/Salinas,2024,Artesia,0.0
+Watsonville/Salinas,2024,Carpinteria,0.0
+Watsonville/Salinas,2024,PS-13.467.089,0.0
+Watsonville/Salinas,2024,Eclipse,3.0
+Watsonville/Salinas,2025,Albion,34.0
+Watsonville/Salinas,2025,Alturas,908.0
+Watsonville/Salinas,2025,Cabrillo,1036.0
+Watsonville/Salinas,2025,Fronteras,42.0
+Watsonville/Salinas,2025,Monterey,3475.0
+Watsonville/Salinas,2025,Other,228.0
+Watsonville/Salinas,2025,Proprietary,7056.0
+Watsonville/Salinas,2025,Royal Royce,42.0
+Watsonville/Salinas,2025,San Andreas,185.0
+Watsonville/Salinas,2025,Sweet Ann,85.0
+Watsonville/Salinas,2025,Unreported / Underreported,447.0
+Watsonville/Salinas,2025,P18-009R,10.0
+Watsonville/Salinas,2025,Artesia,0.0
+Watsonville/Salinas,2025,Carpinteria,0.0
+Watsonville/Salinas,2025,PS-13.467.089,0.0
+Watsonville/Salinas,2025,Eclipse,4.0
+Watsonville/Salinas,2026,Proprietary,6721.0
+Watsonville/Salinas,2026,Alturas,2786.0
+Watsonville/Salinas,2026,Monterey,2469.0
+Watsonville/Salinas,2026,Cabrillo,756.0
+Watsonville/Salinas,2026,P18-009R,722.0
+Watsonville/Salinas,2026,Unreported / Underreported,386.0
+Watsonville/Salinas,2026,Artesia,150.0
+Watsonville/Salinas,2026,Carpinteria,124.0
+Watsonville/Salinas,2026,PS-13.467.089,93.0
+Watsonville/Salinas,2026,San Andreas,84.0
+Watsonville/Salinas,2026,Other,56.0
+Watsonville/Salinas,2026,Royal Royce,55.0
+Watsonville/Salinas,2026,Eclipse,44.0
+Watsonville/Salinas,2026,Albion,34.0
+Santa Maria,2010,Albion,4816.0
+Santa Maria,2010,Benicia,0.0
+Santa Maria,2010,Camino Real,1503.0
+Santa Maria,2010,Monterey,26.0
+Santa Maria,2010,Other,0.0
+Santa Maria,2010,Portola,11.0
+Santa Maria,2010,Proprietary,1756.0
+Santa Maria,2010,San Andreas,1260.0
+Santa Maria,2010,Ventana,10.0
+Santa Maria,2011,Albion,4242.0
+Santa Maria,2011,Benicia,0.0
+Santa Maria,2011,Camino Real,802.0
+Santa Maria,2011,Monterey,71.0
+Santa Maria,2011,Other,3.0
+Santa Maria,2011,Portola,11.0
+Santa Maria,2011,Proprietary,1796.0
+Santa Maria,2011,San Andreas,1771.0
+Santa Maria,2011,Ventana,65.0
+Santa Maria,2012,Albion,3307.0
+Santa Maria,2012,Benicia,134.0
+Santa Maria,2012,Camino Real,154.0
+Santa Maria,2012,Monterey,221.0
+Santa Maria,2012,Other,0.0
+Santa Maria,2012,Portola,35.0
+Santa Maria,2012,Proprietary,2211.0
+Santa Maria,2012,San Andreas,2138.0
+Santa Maria,2012,Ventana,186.0
+Santa Maria,2012,Cabrillo,0.0
+Santa Maria,2012,Fronteras,0.0
+Santa Maria,2013,Albion,2361.0
+Santa Maria,2013,Benicia,40.0
+Santa Maria,2013,Camino Real,82.0
+Santa Maria,2013,Monterey,824.0
+Santa Maria,2013,Other,0.0
+Santa Maria,2013,Portola,106.0
+Santa Maria,2013,Proprietary,2378.0
+Santa Maria,2013,San Andreas,2872.0
+Santa Maria,2013,Ventana,161.0
+Santa Maria,2013,Cabrillo,0.0
+Santa Maria,2013,Fronteras,0.0
+Santa Maria,2014,Albion,1232.0
+Santa Maria,2014,Benicia,20.0
+Santa Maria,2014,Camino Real,0.0
+Santa Maria,2014,Monterey,2057.0
+Santa Maria,2014,Other,0.0
+Santa Maria,2014,Portola,0.0
+Santa Maria,2014,Proprietary,1881.0
+Santa Maria,2014,San Andreas,3759.0
+Santa Maria,2014,Ventana,55.0
+Santa Maria,2014,Cabrillo,0.0
+Santa Maria,2014,Fronteras,0.0
+Santa Maria,2015,Albion,312.0
+Santa Maria,2015,Benicia,0.0
+Santa Maria,2015,Camino Real,5.0
+Santa Maria,2015,Monterey,2552.0
+Santa Maria,2015,Portola,300.0
+Santa Maria,2015,Proprietary,1798.0
+Santa Maria,2015,San Andreas,3328.0
+Santa Maria,2015,Ventana,65.0
+Santa Maria,2015,Cabrillo,0.0
+Santa Maria,2015,Fronteras,0.0
+Santa Maria,2016,Albion,156.0
+Santa Maria,2016,Benicia,0.0
+Santa Maria,2016,Cabrillo,74.0
+Santa Maria,2016,Camino Real,0.0
+Santa Maria,2016,Fronteras,113.0
+Santa Maria,2016,Monterey,2716.0
+Santa Maria,2016,Portola,317.0
+Santa Maria,2016,Proprietary,1588.0
+Santa Maria,2016,San Andreas,3296.0
+Santa Maria,2016,Ventana,0.0
+Santa Maria,2016,Unreported / Underreported,0.0
+Santa Maria,2017,Albion,81.0
+Santa Maria,2017,Benicia,0.0
+Santa Maria,2017,Cabrillo,280.0
+Santa Maria,2017,Camino Real,0.0
+Santa Maria,2017,Fronteras,348.0
+Santa Maria,2017,Monterey,3527.0
+Santa Maria,2017,Portola,14.0
+Santa Maria,2017,Proprietary,1497.0
+Santa Maria,2017,San Andreas,3038.0
+Santa Maria,2017,Ventana,0.0
+Santa Maria,2017,Unreported / Underreported,0.0
+Santa Maria,2018,Albion,68.0
+Santa Maria,2018,Cabrillo,438.0
+Santa Maria,2018,Fronteras,505.0
+Santa Maria,2018,Monterey,3600.0
+Santa Maria,2018,Portola,90.0
+Santa Maria,2018,Proprietary,1425.0
+Santa Maria,2018,San Andreas,2426.0
+Santa Maria,2018,Ventana,0.0
+Santa Maria,2018,Unreported / Underreported,0.0
+Santa Maria,2018,Royal Royce,0.0
+Santa Maria,2018,Valiant,0.0
+Santa Maria,2019,Albion,63.0
+Santa Maria,2019,Cabrillo,395.0
+Santa Maria,2019,Fronteras,840.0
+Santa Maria,2019,Monterey,3991.0
+Santa Maria,2019,Portola,166.0
+Santa Maria,2019,Proprietary,1415.0
+Santa Maria,2019,San Andreas,2034.0
+Santa Maria,2019,Ventana,0.0
+Santa Maria,2019,Unreported / Underreported,0.0
+Santa Maria,2019,Royal Royce,0.0
+Santa Maria,2019,Valiant,0.0
+Santa Maria,2020,Albion,59.0
+Santa Maria,2020,Cabrillo,335.0
+Santa Maria,2020,Fronteras,1260.0
+Santa Maria,2020,Monterey,4568.0
+Santa Maria,2020,Portola,307.0
+Santa Maria,2020,Proprietary,1583.0
+Santa Maria,2020,San Andreas,1208.0
+Santa Maria,2020,Unreported / Underreported,378.0
+Santa Maria,2020,Royal Royce,0.0
+Santa Maria,2020,Valiant,0.0
+Santa Maria,2020,Sayulita,0.0
+Santa Maria,2020,Victor,0.0
+Santa Maria,2021,Albion,26.0
+Santa Maria,2021,Cabrillo,426.0
+Santa Maria,2021,Fronteras,1955.0
+Santa Maria,2021,Monterey,4867.0
+Santa Maria,2021,Portola,314.0
+Santa Maria,2021,Proprietary,1477.0
+Santa Maria,2021,Royal Royce,87.0
+Santa Maria,2021,San Andreas,978.0
+Santa Maria,2021,Unreported / Underreported,358.0
+Santa Maria,2021,Valiant,17.0
+Santa Maria,2021,Sayulita,0.0
+Santa Maria,2021,Victor,0.0
+Santa Maria,2021,Alturas,0.0
+Santa Maria,2021,Belvedere,0.0
+Santa Maria,2021,Salma,0.0
+Santa Maria,2022,Albion,40.0
+Santa Maria,2022,Cabrillo,733.0
+Santa Maria,2022,Fronteras,2019.0
+Santa Maria,2022,Monterey,4923.0
+Santa Maria,2022,Portola,304.0
+Santa Maria,2022,Proprietary,1869.0
+Santa Maria,2022,Royal Royce,158.0
+Santa Maria,2022,San Andreas,271.0
+Santa Maria,2022,Unreported / Underreported,965.0
+Santa Maria,2022,Valiant,48.0
+Santa Maria,2022,Sayulita,0.0
+Santa Maria,2022,Victor,0.0
+Santa Maria,2022,Alturas,0.0
+Santa Maria,2022,Belvedere,0.0
+Santa Maria,2022,Salma,1.0
+Santa Maria,2022,BG-10.3169,0.0
+Santa Maria,2022,Adelanto,0.0
+Santa Maria,2022,P18-009R,0.0
+Santa Maria,2022,BG-10.3181,0.0
+Santa Maria,2022,Other,366.0
+Santa Maria,2022,Eclipse,0.0
+Santa Maria,2022,Artesia,0.0
+Santa Maria,2022,Golden Gate,0.0
+Santa Maria,2022,Keystone,0.0
+Santa Maria,2023,Cabrillo,686.0
+Santa Maria,2023,Fronteras,2223.0
+Santa Maria,2023,Monterey,4700.0
+Santa Maria,2023,Portola,139.0
+Santa Maria,2023,Proprietary,1972.0
+Santa Maria,2023,Royal Royce,164.0
+Santa Maria,2023,San Andreas,204.0
+Santa Maria,2023,Unreported / Underreported,386.0
+Santa Maria,2023,Sayulita,4.0
+Santa Maria,2023,Valiant,15.0
+Santa Maria,2023,Victor,5.0
+Santa Maria,2023,Alturas,0.0
+Santa Maria,2023,Belvedere,0.0
+Santa Maria,2023,Salma,0.0
+Santa Maria,2023,BG-10.3169,0.0
+Santa Maria,2023,Adelanto,0.0
+Santa Maria,2023,P18-009R,0.0
+Santa Maria,2023,BG-10.3181,0.0
+Santa Maria,2023,Other,253.0
+Santa Maria,2023,Eclipse,0.0
+Santa Maria,2023,Artesia,0.0
+Santa Maria,2023,Golden Gate,0.0
+Santa Maria,2023,Keystone,0.0
+Santa Maria,2024,Cabrillo,744.0
+Santa Maria,2024,Fronteras,2212.0
+Santa Maria,2024,Monterey,4211.0
+Santa Maria,2024,Portola,676.0
+Santa Maria,2024,Proprietary,2519.0
+Santa Maria,2024,Royal Royce,159.0
+Santa Maria,2024,San Andreas,140.0
+Santa Maria,2024,Sayulita,46.0
+Santa Maria,2024,Unreported / Underreported,539.0
+Santa Maria,2024,Valiant,45.0
+Santa Maria,2024,Victor,86.0
+Santa Maria,2024,Alturas,0.0
+Santa Maria,2024,Belvedere,0.0
+Santa Maria,2024,Salma,0.0
+Santa Maria,2024,BG-10.3169,0.0
+Santa Maria,2024,Adelanto,0.0
+Santa Maria,2024,P18-009R,0.0
+Santa Maria,2024,BG-10.3181,0.0
+Santa Maria,2024,Other,239.0
+Santa Maria,2024,Eclipse,0.0
+Santa Maria,2024,Artesia,0.0
+Santa Maria,2024,Golden Gate,0.0
+Santa Maria,2024,Keystone,0.0
+Santa Maria,2025,Alturas,30.0
+Santa Maria,2025,Belvedere,36.0
+Santa Maria,2025,Cabrillo,640.0
+Santa Maria,2025,Fronteras,2188.0
+Santa Maria,2025,Monterey,2715.0
+Santa Maria,2025,Portola,1008.0
+Santa Maria,2025,Proprietary,3461.0
+Santa Maria,2025,Royal Royce,478.0
+Santa Maria,2025,Salma,25.0
+Santa Maria,2025,Unreported / Underreported,447.0
+Santa Maria,2025,Victor,92.0
+Santa Maria,2025,BG-10.3169,187.0
+Santa Maria,2025,Adelanto,21.0
+Santa Maria,2025,P18-009R,35.0
+Santa Maria,2025,BG-10.3181,146.0
+Santa Maria,2025,Other,152.0
+Santa Maria,2025,Eclipse,4.0
+Santa Maria,2025,Artesia,0.0
+Santa Maria,2025,Golden Gate,0.0
+Santa Maria,2025,Keystone,0.0
+Santa Maria,2026,Proprietary,4213.0
+Santa Maria,2026,Monterey,1606.0
+Santa Maria,2026,Fronteras,1583.0
+Santa Maria,2026,BG-10.3169,1261.0
+Santa Maria,2026,Portola,726.0
+Santa Maria,2026,Cabrillo,512.0
+Santa Maria,2026,Royal Royce,372.0
+Santa Maria,2026,Adelanto,318.0
+Santa Maria,2026,Alturas,306.0
+Santa Maria,2026,Victor,190.0
+Santa Maria,2026,P18-009R,142.0
+Santa Maria,2026,Unreported / Underreported,128.0
+Santa Maria,2026,BG-10.3181,115.0
+Santa Maria,2026,Other,106.0
+Santa Maria,2026,Eclipse,97.0
+Santa Maria,2026,Artesia,60.0
+Santa Maria,2026,Golden Gate,47.0
+Santa Maria,2026,Keystone,28.0
+Oxnard,2010,Albion,129.0
+Oxnard,2010,Benicia,0.0
+Oxnard,2010,Camarosa,136.0
+Oxnard,2010,Monterey,224.0
+Oxnard,2010,Other,0.0
+Oxnard,2010,Palomar,496.0
+Oxnard,2010,Portola,53.0
+Oxnard,2010,Proprietary,4770.0
+Oxnard,2010,Radiance,0.0
+Oxnard,2010,San Andreas,1025.0
+Oxnard,2010,Sweet Ann,0.0
+Oxnard,2010,Ventana,2577.0
+Oxnard,2011,Albion,25.0
+Oxnard,2011,Benicia,62.0
+Oxnard,2011,Camarosa,34.0
+Oxnard,2011,Monterey,442.0
+Oxnard,2011,Other,15.0
+Oxnard,2011,Palomar,490.0
+Oxnard,2011,Portola,0.0
+Oxnard,2011,Proprietary,4662.0
+Oxnard,2011,Radiance,38.0
+Oxnard,2011,San Andreas,1822.0
+Oxnard,2011,Sweet Ann,0.0
+Oxnard,2011,Ventana,1292.0
+Oxnard,2011,Sabrina,0.0
+Oxnard,2012,Albion,24.0
+Oxnard,2012,Benicia,720.0
+Oxnard,2012,Camarosa,0.0
+Oxnard,2012,Monterey,372.0
+Oxnard,2012,Other,0.0
+Oxnard,2012,Palomar,238.0
+Oxnard,2012,Portola,0.0
+Oxnard,2012,Proprietary,4699.0
+Oxnard,2012,Radiance,43.0
+Oxnard,2012,San Andreas,2100.0
+Oxnard,2012,Sweet Ann,25.0
+Oxnard,2012,Ventana,631.0
+Oxnard,2012,Sabrina,0.0
+Oxnard,2012,Fronteras,0.0
+Oxnard,2013,Albion,115.0
+Oxnard,2013,Benicia,1180.0
+Oxnard,2013,Camarosa,0.0
+Oxnard,2013,Monterey,406.0
+Oxnard,2013,Other,1.0
+Oxnard,2013,Palomar,82.0
+Oxnard,2013,Portola,0.0
+Oxnard,2013,Proprietary,5375.0
+Oxnard,2013,Radiance,55.0
+Oxnard,2013,San Andreas,2286.0
+Oxnard,2013,Sweet Ann,1.0
+Oxnard,2013,Ventana,743.0
+Oxnard,2013,Sabrina,3.0
+Oxnard,2013,Fronteras,0.0
+Oxnard,2013,Petaluma,0.0
+Oxnard,2014,Albion,0.0
+Oxnard,2014,Benicia,409.0
+Oxnard,2014,Camarosa,2.0
+Oxnard,2014,Monterey,168.0
+Oxnard,2014,Other,2.0
+Oxnard,2014,Palomar,0.0
+Oxnard,2014,Portola,2.0
+Oxnard,2014,Proprietary,4870.0
+Oxnard,2014,Radiance,260.0
+Oxnard,2014,San Andreas,2182.0
+Oxnard,2014,Sweet Ann,0.0
+Oxnard,2014,Ventana,703.0
+Oxnard,2014,Sabrina,12.0
+Oxnard,2014,Fronteras,0.0
+Oxnard,2014,Petaluma,0.0
+Oxnard,2015,Albion,0.0
+Oxnard,2015,Benicia,366.0
+Oxnard,2015,Camarosa,0.0
+Oxnard,2015,Monterey,177.0
+Oxnard,2015,Other,0.0
+Oxnard,2015,Palomar,0.0
+Oxnard,2015,Proprietary,4850.0
+Oxnard,2015,Radiance,565.0
+Oxnard,2015,Sabrina,83.0
+Oxnard,2015,San Andreas,1642.0
+Oxnard,2015,Sweet Ann,0.0
+Oxnard,2015,Ventana,220.0
+Oxnard,2015,Fronteras,0.0
+Oxnard,2015,Portola,0.0
+Oxnard,2015,Petaluma,0.0
+Oxnard,2016,Albion,0.0
+Oxnard,2016,Benicia,100.0
+Oxnard,2016,Fronteras,659.0
+Oxnard,2016,Monterey,189.0
+Oxnard,2016,Other,0.0
+Oxnard,2016,Palomar,0.0
+Oxnard,2016,Portola,65.0
+Oxnard,2016,Proprietary,3974.0
+Oxnard,2016,Radiance,663.0
+Oxnard,2016,Sabrina,38.0
+Oxnard,2016,San Andreas,1272.0
+Oxnard,2016,Sweet Ann,0.0
+Oxnard,2016,Ventana,180.0
+Oxnard,2016,Petaluma,2.0
+Oxnard,2017,Albion,0.0
+Oxnard,2017,Benicia,190.0
+Oxnard,2017,Fronteras,1352.0
+Oxnard,2017,Monterey,114.0
+Oxnard,2017,Other,6.0
+Oxnard,2017,Palomar,0.0
+Oxnard,2017,Petaluma,525.0
+Oxnard,2017,Portola,5.0
+Oxnard,2017,Proprietary,3321.0
+Oxnard,2017,Radiance,473.0
+Oxnard,2017,Sabrina,0.0
+Oxnard,2017,San Andreas,961.0
+Oxnard,2017,Ventana,32.0
+Oxnard,2018,Benicia,0.0
+Oxnard,2018,Fronteras,1188.0
+Oxnard,2018,Monterey,0.0
+Oxnard,2018,Other,0.0
+Oxnard,2018,Petaluma,357.0
+Oxnard,2018,Portola,30.0
+Oxnard,2018,Proprietary,2849.0
+Oxnard,2018,Radiance,257.0
+Oxnard,2018,Sabrina,0.0
+Oxnard,2018,San Andreas,832.0
+Oxnard,2018,Ventana,4.0
+Oxnard,2018,Unreported / Underreported,0.0
+Oxnard,2019,Benicia,0.0
+Oxnard,2019,Fronteras,1181.0
+Oxnard,2019,Monterey,20.0
+Oxnard,2019,Other,204.0
+Oxnard,2019,Petaluma,158.0
+Oxnard,2019,Portola,6.0
+Oxnard,2019,Proprietary,3009.0
+Oxnard,2019,Radiance,39.0
+Oxnard,2019,Sabrina,0.0
+Oxnard,2019,San Andreas,779.0
+Oxnard,2019,Ventana,0.0
+Oxnard,2019,Unreported / Underreported,0.0
+Oxnard,2019,Victor,0.0
+Oxnard,2020,Benicia,0.0
+Oxnard,2020,Fronteras,1253.0
+Oxnard,2020,Monterey,3.0
+Oxnard,2020,Other,173.0
+Oxnard,2020,Petaluma,50.0
+Oxnard,2020,Portola,13.0
+Oxnard,2020,Proprietary,3075.0
+Oxnard,2020,Radiance,0.0
+Oxnard,2020,Sabrina,0.0
+Oxnard,2020,San Andreas,636.0
+Oxnard,2020,Ventana,120.0
+Oxnard,2020,Unreported / Underreported,0.0
+Oxnard,2020,Victor,0.0
+Oxnard,2020,Adelanto,0.0
+Oxnard,2021,Fronteras,1600.0
+Oxnard,2021,Other,186.0
+Oxnard,2021,Petaluma,49.0
+Oxnard,2021,Portola,20.0
+Oxnard,2021,Proprietary,3124.0
+Oxnard,2021,Radiance,0.0
+Oxnard,2021,San Andreas,585.0
+Oxnard,2021,Unreported / Underreported,11.0
+Oxnard,2021,Ventana,126.0
+Oxnard,2021,Monterey,3.0
+Oxnard,2021,Victor,6.0
+Oxnard,2021,Adelanto,0.0
+Oxnard,2021,Belvedere,0.0
+Oxnard,2022,Fronteras,1761.0
+Oxnard,2022,Other,318.0
+Oxnard,2022,Petaluma,26.0
+Oxnard,2022,Portola,168.0
+Oxnard,2022,Proprietary,3251.0
+Oxnard,2022,Radiance,0.0
+Oxnard,2022,San Andreas,366.0
+Oxnard,2022,Unreported / Underreported,240.0
+Oxnard,2022,Ventana,113.0
+Oxnard,2022,Monterey,0.0
+Oxnard,2022,Victor,14.0
+Oxnard,2022,Adelanto,0.0
+Oxnard,2022,Belvedere,0.0
+Oxnard,2022,BG-4.367,0.0
+Oxnard,2022,Castaic,0.0
+Oxnard,2022,BG-10.3181,0.0
+Oxnard,2022,BG-10.3169,0.0
+Oxnard,2023,Fronteras,2006.0
+Oxnard,2023,Monterey,58.0
+Oxnard,2023,Other,181.0
+Oxnard,2023,Petaluma,0.0
+Oxnard,2023,Portola,118.0
+Oxnard,2023,Proprietary,3648.0
+Oxnard,2023,San Andreas,245.0
+Oxnard,2023,Unreported / Underreported,185.0
+Oxnard,2023,Ventana,0.0
+Oxnard,2023,Victor,35.0
+Oxnard,2023,Adelanto,0.0
+Oxnard,2023,Belvedere,0.0
+Oxnard,2023,BG-4.367,0.0
+Oxnard,2023,Castaic,0.0
+Oxnard,2023,BG-10.3181,0.0
+Oxnard,2023,BG-10.3169,0.0
+Oxnard,2024,Adelanto,27.0
+Oxnard,2024,Fronteras,1838.0
+Oxnard,2024,Other,260.0
+Oxnard,2024,Portola,243.0
+Oxnard,2024,Proprietary,4110.0
+Oxnard,2024,San Andreas,152.0
+Oxnard,2024,Unreported / Underreported,0.0
+Oxnard,2024,Victor,45.0
+Oxnard,2024,Belvedere,0.0
+Oxnard,2024,BG-4.367,0.0
+Oxnard,2024,Castaic,0.0
+Oxnard,2024,BG-10.3181,0.0
+Oxnard,2024,BG-10.3169,0.0
+Oxnard,2025,Adelanto,131.0
+Oxnard,2025,Belvedere,150.0
+Oxnard,2025,Fronteras,1313.0
+Oxnard,2025,Other,168.0
+Oxnard,2025,Portola,147.0
+Oxnard,2025,Proprietary,4152.0
+Oxnard,2025,San Andreas,128.0
+Oxnard,2025,Unreported / Underreported,69.0
+Oxnard,2025,Victor,64.0
+Oxnard,2025,BG-4.367,51.0
+Oxnard,2025,Castaic,0.0
+Oxnard,2025,BG-10.3181,5.0
+Oxnard,2025,BG-10.3169,0.0
+Oxnard,2026,Proprietary,3986.0
+Oxnard,2026,Fronteras,923.0
+Oxnard,2026,Adelanto,298.0
+Oxnard,2026,Belvedere,274.0
+Oxnard,2026,Unreported / Underreported,101.0
+Oxnard,2026,BG-4.367,95.0
+Oxnard,2026,Castaic,80.0
+Oxnard,2026,BG-10.3181,73.0
+Oxnard,2026,San Andreas,60.0
+Oxnard,2026,BG-10.3169,36.0
+Oxnard,2026,Victor,32.0
+Oxnard,2026,Other,15.0

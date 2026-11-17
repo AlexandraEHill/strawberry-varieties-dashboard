@@ -1,0 +1,401 @@
+year,variety,acres
+2009,Albion,15252.0
+2009,Benicia,0.0
+2009,Camarosa,1276.0
+2009,Camino Real,1908.0
+2009,Chandler,143.0
+2009,Diamante,0.0
+2009,Mojave,0.0
+2009,Monterey,108.0
+2009,Other,21.0
+2009,Palomar,423.0
+2009,Portola,196.0
+2009,Proprietary,13910.0
+2009,Radiance,0.0
+2009,San Andreas,1282.0
+2009,Seascape,28.0
+2009,Sweet Ann,0.0
+2009,Ventana,4087.0
+2010,Albion,12931.0
+2010,Benicia,0.0
+2010,Camarosa,587.0
+2010,Camino Real,1503.0
+2010,Chandler,81.0
+2010,Diamante,55.0
+2010,Mojave,0.0
+2010,Monterey,354.0
+2010,Other,96.0
+2010,Palomar,599.0
+2010,Portola,64.0
+2010,Proprietary,11904.0
+2010,Radiance,0.0
+2010,San Andreas,3052.0
+2010,Seascape,5.0
+2010,Sweet Ann,0.0
+2010,Ventana,3201.0
+2011,Albion,12631.0
+2011,Benicia,65.0
+2011,Camarosa,348.0
+2011,Camino Real,802.0
+2011,Chandler,99.0
+2011,Diamante,0.0
+2011,Mojave,38.0
+2011,Monterey,773.0
+2011,Other,7.0
+2011,Palomar,663.0
+2011,Portola,11.0
+2011,Proprietary,12227.0
+2011,Radiance,42.0
+2011,San Andreas,4320.0
+2011,Seascape,0.0
+2011,Sweet Ann,20.0
+2011,Ventana,1790.0
+2011,Sabrina,0.0
+2012,Albion,11571.0
+2012,Benicia,1019.0
+2012,Camarosa,56.0
+2012,Camino Real,154.0
+2012,Chandler,183.0
+2012,Diamante,0.0
+2012,Mojave,0.0
+2012,Monterey,1110.0
+2012,Other,0.0
+2012,Palomar,485.0
+2012,Portola,40.0
+2012,Proprietary,12938.0
+2012,Radiance,199.0
+2012,San Andreas,5191.0
+2012,Seascape,1.0
+2012,Sweet Ann,37.0
+2012,Ventana,1031.0
+2012,Sabrina,0.0
+2012,Cabrillo,0.0
+2012,Fronteras,0.0
+2013,Albion,8885.0
+2013,Benicia,1394.0
+2013,Camarosa,112.0
+2013,Camino Real,82.0
+2013,Chandler,87.0
+2013,Diamante,0.0
+2013,Mojave,0.0
+2013,Monterey,2816.0
+2013,Other,0.0
+2013,Palomar,176.0
+2013,Portola,106.0
+2013,Proprietary,14385.0
+2013,Radiance,439.0
+2013,San Andreas,6143.0
+2013,Seascape,0.0
+2013,Sweet Ann,34.0
+2013,Ventana,984.0
+2013,Sabrina,3.0
+2013,Cabrillo,0.0
+2013,Fronteras,0.0
+2013,Petaluma,0.0
+2014,Albion,5500.0
+2014,Benicia,429.0
+2014,Camarosa,108.0
+2014,Camino Real,0.0
+2014,Chandler,90.0
+2014,Diamante,0.0
+2014,Mojave,0.0
+2014,Monterey,5460.0
+2014,Other,2.0
+2014,Palomar,0.0
+2014,Portola,2.0
+2014,Proprietary,13251.0
+2014,Radiance,879.0
+2014,San Andreas,6901.0
+2014,Sweet Ann,254.0
+2014,Ventana,758.0
+2014,Sabrina,15.0
+2014,Cabrillo,0.0
+2014,Fronteras,0.0
+2014,Petaluma,0.0
+2015,Albion,2799.0
+2015,Camarosa,78.0
+2015,Camino Real,5.0
+2015,Chandler,53.0
+2015,Mojave,0.0
+2015,Monterey,7167.0
+2015,Other,5.0
+2015,Palomar,0.0
+2015,Portola,300.0
+2015,Proprietary,13164.0
+2015,Radiance,1083.0
+2015,Sabrina,84.0
+2015,San Andreas,5920.0
+2015,Ventana,315.0
+2015,Benicia,366.0
+2015,Cabrillo,0.0
+2015,Fronteras,0.0
+2015,Sweet Ann,307.0
+2015,Petaluma,0.0
+2016,Albion,1114.0
+2016,Benicia,100.0
+2016,Cabrillo,275.0
+2016,Camarosa,41.0
+2016,Camino Real,0.0
+2016,Chandler,14.0
+2016,Fronteras,907.0
+2016,Monterey,7761.0
+2016,Other,22.0
+2016,Palomar,0.0
+2016,Portola,382.0
+2016,Proprietary,12069.0
+2016,Radiance,944.0
+2016,Sabrina,38.0
+2016,San Andreas,5053.0
+2016,Sweet Ann,431.0
+2016,Ventana,180.0
+2016,Petaluma,2.0
+2016,Unreported / Underreported,0.0
+2017,Albion,545.0
+2017,Benicia,190.0
+2017,Cabrillo,1481.0
+2017,Camarosa,0.0
+2017,Camino Real,0.0
+2017,Chandler,14.0
+2017,Fronteras,1826.0
+2017,Monterey,8382.0
+2017,Other,29.0
+2017,Palomar,0.0
+2017,Petaluma,542.0
+2017,Portola,37.0
+2017,Proprietary,11471.0
+2017,Radiance,595.0
+2017,Sabrina,2.0
+2017,San Andreas,4448.0
+2017,Sweet Ann,147.0
+2017,Ventana,32.0
+2017,Unreported / Underreported,0.0
+2018,Albion,279.0
+2018,Benicia,0.0
+2018,Cabrillo,1437.0
+2018,Camarosa,0.0
+2018,Chandler,12.0
+2018,Fronteras,1799.0
+2018,Monterey,8641.0
+2018,Other,37.0
+2018,Petaluma,368.0
+2018,Portola,123.0
+2018,Proprietary,10466.0
+2018,Radiance,257.0
+2018,Sabrina,10.0
+2018,San Andreas,3645.0
+2018,Sweet Ann,371.0
+2018,Ventana,4.0
+2018,Unreported / Underreported,0.0
+2018,Royal Royce,0.0
+2018,Valiant,0.0
+2019,Albion,138.0
+2019,Benicia,0.0
+2019,Cabrillo,1125.0
+2019,Camarosa,1.0
+2019,Chandler,14.0
+2019,Fronteras,2112.0
+2019,Monterey,8534.0
+2019,Other,250.0
+2019,Petaluma,181.0
+2019,Portola,172.0
+2019,Proprietary,10173.0
+2019,Radiance,39.0
+2019,Sabrina,0.0
+2019,San Andreas,3147.0
+2019,Sweet Ann,218.0
+2019,Ventana,0.0
+2019,Unreported / Underreported,0.0
+2019,Royal Royce,0.0
+2019,Valiant,0.0
+2019,Adelanto,0.0
+2019,Victor,0.0
+2019,Moxie,0.0
+2020,Albion,124.0
+2020,Benicia,0.0
+2020,Cabrillo,1249.0
+2020,Camarosa,0.0
+2020,Fronteras,2604.0
+2020,Monterey,9228.0
+2020,Other,215.0
+2020,Petaluma,80.0
+2020,Portola,324.0
+2020,Proprietary,10492.0
+2020,Radiance,0.0
+2020,Sabrina,0.0
+2020,San Andreas,2179.0
+2020,Sweet Ann,87.0
+2020,Unreported / Underreported,378.0
+2020,Ventana,120.0
+2020,Royal Royce,0.0
+2020,Valiant,0.0
+2020,Adelanto,0.0
+2020,Victor,0.0
+2020,Moxie,0.0
+2020,Sayulita,0.0
+2021,Albion,109.0
+2021,Cabrillo,1386.0
+2021,Fronteras,3726.0
+2021,Monterey,9935.0
+2021,Other,242.0
+2021,Petaluma,82.0
+2021,Portola,334.0
+2021,Proprietary,10272.0
+2021,Radiance,0.0
+2021,Royal Royce,122.0
+2021,San Andreas,1878.0
+2021,Sweet Ann,58.0
+2021,Unreported / Underreported,484.0
+2021,Valiant,28.0
+2021,Ventana,126.0
+2021,Adelanto,0.0
+2021,Victor,6.0
+2021,Moxie,0.0
+2021,Sayulita,0.0
+2021,Alturas,0.0
+2021,Belvedere,0.0
+2021,Salma,0.0
+2022,Albion,94.0
+2022,Cabrillo,1813.0
+2022,Fronteras,3934.0
+2022,Monterey,10003.0
+2022,Other,417.0
+2022,Petaluma,36.0
+2022,Portola,480.0
+2022,Proprietary,11203.0
+2022,Radiance,0.0
+2022,Royal Royce,200.0
+2022,San Andreas,1067.0
+2022,Sweet Ann,147.0
+2022,Unreported / Underreported,1273.0
+2022,Valiant,91.0
+2022,Ventana,113.0
+2022,Adelanto,0.0
+2022,Victor,14.0
+2022,Moxie,13.0
+2022,Sayulita,0.0
+2022,Alturas,0.0
+2022,Belvedere,0.0
+2022,Salma,3.0
+2022,BG-10.3169,0.0
+2022,P18-009R,0.0
+2022,Artesia,0.0
+2022,BG-10.3181,0.0
+2022,Eclipse,0.0
+2022,Carpinteria,0.0
+2022,PS-13.467.089,0.0
+2022,Castaic,0.0
+2022,BG-4.367,0.0
+2022,Golden Gate,0.0
+2022,Keystone,0.0
+2023,Adelanto,52.0
+2023,Albion,39.0
+2023,Cabrillo,1663.0
+2023,Fronteras,4314.0
+2023,Monterey,10007.0
+2023,Other,136.0
+2023,Portola,332.0
+2023,Proprietary,11520.0
+2023,Royal Royce,189.0
+2023,San Andreas,778.0
+2023,Sweet Ann,37.0
+2023,Unreported / Underreported,813.0
+2023,Ventana,0.0
+2023,Victor,40.0
+2023,Moxie,28.0
+2023,Valiant,25.0
+2023,Sayulita,9.0
+2023,Alturas,0.0
+2023,Belvedere,0.0
+2023,Salma,0.0
+2023,BG-10.3169,0.0
+2023,P18-009R,0.0
+2023,Artesia,0.0
+2023,BG-10.3181,0.0
+2023,Eclipse,0.0
+2023,Carpinteria,0.0
+2023,PS-13.467.089,0.0
+2023,Castaic,0.0
+2023,BG-4.367,0.0
+2023,Golden Gate,0.0
+2023,Keystone,0.0
+2024,Adelanto,100.0
+2024,Albion,33.0
+2024,Cabrillo,1862.0
+2024,Fronteras,4116.0
+2024,Monterey,9190.0
+2024,Other,201.0
+2024,Portola,919.0
+2024,Proprietary,13064.0
+2024,Royal Royce,168.0
+2024,San Andreas,606.0
+2024,Sayulita,59.0
+2024,Sweet Ann,48.0
+2024,Unreported / Underreported,679.0
+2024,Valiant,66.0
+2024,Victor,136.0
+2024,Alturas,24.0
+2024,Belvedere,10.0
+2024,Salma,0.0
+2024,BG-10.3169,0.0
+2024,P18-009R,0.0
+2024,Artesia,0.0
+2024,BG-10.3181,0.0
+2024,Eclipse,3.0
+2024,Carpinteria,0.0
+2024,PS-13.467.089,0.0
+2024,Castaic,0.0
+2024,BG-4.367,0.0
+2024,Golden Gate,0.0
+2024,Keystone,0.0
+2025,Adelanto,211.0
+2025,Alturas,938.0
+2025,Albion,56.0
+2025,Belvedere,236.0
+2025,Cabrillo,1676.0
+2025,Fronteras,3573.0
+2025,Monterey,6190.0
+2025,Other,282.0
+2025,Portola,1155.0
+2025,Proprietary,14672.0
+2025,Royal Royce,520.0
+2025,Salma,25.0
+2025,San Andreas,313.0
+2025,Sweet Ann,85.0
+2025,Unreported / Underreported,963.0
+2025,Victor,155.0
+2025,BG-10.3169,187.0
+2025,P18-009R,45.0
+2025,Artesia,0.0
+2025,BG-10.3181,151.0
+2025,Eclipse,8.0
+2025,Carpinteria,0.0
+2025,PS-13.467.089,0.0
+2025,Castaic,0.0
+2025,BG-4.367,51.0
+2025,Golden Gate,0.0
+2025,Keystone,0.0
+2026,Proprietary,14922.0
+2026,Monterey,4076.0
+2026,Alturas,3092.0
+2026,Fronteras,2526.0
+2026,BG-10.3169,1297.0
+2026,Cabrillo,1268.0
+2026,P18-009R,864.0
+2026,Portola,726.0
+2026,Adelanto,694.0
+2026,Unreported / Underreported,615.0
+2026,Royal Royce,427.0
+2026,Belvedere,299.0
+2026,Victor,222.0
+2026,Artesia,210.0
+2026,BG-10.3181,188.0
+2026,San Andreas,153.0
+2026,Eclipse,141.0
+2026,Carpinteria,124.0
+2026,PS-13.467.089,115.0
+2026,Castaic,113.0
+2026,BG-4.367,99.0
+2026,Other,97.0
+2026,Albion,65.0
+2026,Golden Gate,52.0
+2026,Keystone,28.0
