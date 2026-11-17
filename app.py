@@ -144,21 +144,22 @@ def show_kpis(sub):
 
 # ----------------------------------------------------------------- sidebar (branding / about only)
 st.sidebar.title("🍓 Strawberry varieties")
-st.sidebar.caption("CA Strawberry Commission acreage surveys · USDA-NASS · USDA-FAS GAIN")
+st.sidebar.caption("Data on strawberry varieties and acreage from: CA Strawberry Commission acreage surveys · USDA-NASS · USDA-FAS GAIN")
 with st.sidebar.expander("About & how to use", expanded=False):
     st.markdown(
-        "Each tab is self-contained — **its controls sit at the top of the tab**.\n\n"
-        "- **CA Varieties Overview** — the CA variety mix over time (practice, season, region, year).\n"
-        "- **CA Varieties Focus** — one or more varieties tracked across districts.\n"
-        "- **CA · MX · FL Comparison** — CA vs. Florida vs. Mexico planted area, plus Florida & "
+        "This dashboard consists of three tabs: **.\n\n"
+        "- **CA Varieties Overview** — California planted strawberry varieties over time & "
+        "(by cov/org, season, region, year).\n"
+        "- **CA Varieties Focus** — Examine one or more varieties across districts and time.\n"
+        "- **CA · FL · MX Comparison** — CA vs. Florida vs. Mexico planted area, plus Florida & "
         "Mexico variety notes (its own sources).")
-st.sidebar.markdown("---")
-st.sidebar.caption("District variety detail = fall-planted only. "
+#st.sidebar.markdown("---")
+#st.sidebar.caption("District variety detail = fall-planted only. "
                    "Conventional / organic splits = statewide, all plantings, 2021+.")
 
 st.title("California Strawberry Variety Explorer")
 tab_overview, tab_variety, tab_regional = st.tabs(
-    ["📊 CA Varieties Overview", "🔎 CA Varieties Focus", "🗺 CA · MX · FL Comparison"])
+    ["📊 CA Varieties Overview", "🔎 CA Varieties Focus", "🗺 CA · FL · MX Comparison"])
 
 # ----------------------------------------------------------------- Overview
 with tab_overview:
@@ -273,8 +274,7 @@ with tab_variety:
 # ----------------------------------------------------------------- Regional acreage
 with tab_regional:
     st.subheader("Regional context — CA · Florida · Mexico")
-    st.caption("Compares **total planted area** across regions and data sources. This tab is independent "
-               "of the sidebar variety filters (it's a different grain — regions and totals, not CA varieties).")
+    st.caption("Compares **total planted area** across regions and data sources.")
 
     st.markdown("**Trend — planted area over time (thousand acres)**")
     rt = rtrend.copy()
@@ -289,13 +289,14 @@ with tab_regional:
     figt.update_traces(hovertemplate="%{fullData.name}: %{y:.1f}k ac<extra></extra>")
     st.plotly_chart(figt, use_container_width=True)
     st.caption(
-        "**How to read Florida vs. California.** USDA-NASS *acres planted* (solid) is the apples-to-apples "
-        "measure: on that basis Florida (~17k ac, 2025) is roughly a third of California (~46k ac). The "
-        "**Commission (reported)** series (dashed) runs higher for Florida because it counts tax-collector "
-        "*ranch* acres (including greenbelt / non-planted land), so it overstates planted area; for California "
-        "it is the survey's total reported acreage and tracks NASS closely. "
-        "Mexico: USDA-FAS GAIN national area (ha→ac, solid) plus the Commission's North-America estimate "
-        "(Baja + Other, dashed, last two seasons) — the two agree closely at ~37k ac.")
+        "**How to read Florida vs. California.** USDA-NASS *acres planted* (solid) shows planted acreage "
+        "for both states on a consistent basis. On that basis Florida (~17k ac, 2025) is roughly a third "
+        "of California (~46k ac). The **Commission (reported)** series (dashed) runs higher for Florida "
+        "because it includes tax-collector *ranch* acres (including greenbelt / non-planted land); "
+        "for California it is the commission survey's total reported acreage and tracks NASS closely. "
+        "Mexico: Data comes from the USDA-FAS GAIN annual reports on national area (ha→ac, solid) "
+        "plus the Commission's North-America estimate (Baja + Other, dashed, last two seasons); "
+        "the series agree closely at ~37k ac. (Links to the GAIN reports are at the bottom of this page.)")
 
     st.divider()
     st.markdown("**Snapshot — a single season, by region (Commission's North-America frame)**")
