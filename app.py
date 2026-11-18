@@ -273,7 +273,7 @@ with tab_variety:
 
 # ----------------------------------------------------------------- Regional acreage
 with tab_regional:
-    st.subheader("Regional context — CA · Florida · Mexico")
+    st.subheader("Regional Trends: CA · Florida · Mexico")
     st.caption("Compares **total planted area** across regions and data sources.")
 
     st.markdown("**Trend — planted area over time (thousand acres)**")
@@ -299,7 +299,7 @@ with tab_regional:
         "the series agree closely at ~37k ac. (Links to the GAIN reports are at the bottom of this page.)")
 
     st.divider()
-    st.markdown("**Snapshot — a single season, by region (Commission's North-America frame)**")
+    st.markdown("**Snapshot: A single year by detailed region **")
     snap_years = sorted(rsnap.year.unique())
     snap_yr = st.select_slider("Season (year)", options=snap_years, value=snap_years[-1])
     s = rsnap[rsnap.year == snap_yr].sort_values("acres", ascending=True)
@@ -318,7 +318,7 @@ with tab_regional:
     st.caption("Neither Florida nor Mexico publishes a CA-style variety-acreage survey, so these are "
                "qualitative — named cultivars and directional shifts from USDA and trade sources.")
 
-    with st.expander("🌴 Florida — Radiance → Brilliance", expanded=True):
+    with st.expander("🌴 Florida: Shifts to new varieties", expanded=True):
         st.markdown(
             "Florida's mix mirrors California's old→new transition, driven by UF/IFAS releases:\n\n"
             "- **Florida Radiance** — once dominant (~75% of acreage pre-2018), now largely displaced.\n"
@@ -337,15 +337,14 @@ with tab_regional:
             "- [Florida Strawberry (FFSP) — ‘Florida Brilliance’ profile](https://ffsp.net/varieties/strawberry/florida-brilliance/)\n"
             "- [Agronometrics — Florida's $300M strawberry industry](https://stories.agronometrics.com/researchers-play-key-role-in-floridas-300-million-strawberry-industry/)")
 
-    with st.expander("🌵 Mexico — imported genetics, consolidating", expanded=True):
+    with st.expander("🌵 Mexico: Imported Genetics, Consolidating", expanded=True):
         st.markdown(
-            "Unlike the blackberry/blueberry turnover elsewhere in Mexico, **strawberry is not a dramatic "
-            "public→proprietary shift**. Mexican strawberry largely plants **imported California / Florida "
+            "Mexican strawberry growers largely plant **imported California / Florida "
             "genetics**:\n\n"
-            "- **Festival** and **Camarosa** — long-standing workhorses.\n"
-            "- **Albion, San Andreas, Sweet Charlie** — UC/other day-neutrals and short-day types in the mix.\n"
-            "- The main trend is **consolidation to fewer varieties** for more uniform, targeted management "
-            "— not a wave of new proprietary cultivars.\n\n"
+            "- **Festival** and **Camarosa** — long-standing and still prominent.\n"
+            "- **Albion, San Andreas, Sweet Charlie** — UC/other day-neutrals and short-day types.\n"
+            "- The main trend is **consolidation to fewer varieties** for more uniform, targeted management.\n"
+            "- Not following CA's shift to proprietary cultivars.\n\n"
             "Production is concentrated in **Michoacán, Baja California, Guanajuato and Jalisco**; the "
             "USDA-FAS GAIN Berry Annuals track named varieties and planted area but give no acreage split.\n\n"
             "**Sources**\n"
