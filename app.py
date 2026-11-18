@@ -347,7 +347,7 @@ with tab_regional:
             "- The main trend is **consolidation to fewer varieties** for more uniform, targeted management.\n"
             "- Not following CA's shift to proprietary cultivars.\n\n"
             "Production is concentrated in **Michoacán, Baja California, Guanajuato and Jalisco**; the "
-            "USDA-FAS GAIN Berry Annuals track named varieties and planted area but give no acreage split.\n\n"
+            "USDA-FAS GAIN Berry Annuals track named varieties and planted area but do not provide variety-acreages.\n\n"
             "**Sources**\n"
             "- [USDA-FAS GAIN — Berry Annual, Guadalajara (MX2026-0015)](https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Berry+Annual+Voluntary_Guadalajara_Mexico_MX2026-0015.pdf)\n"
             "- [USDA-FAS GAIN — Berry Annual, Guadalajara (MX2025-0005)](https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Berry+Annual+Voluntary_Guadalajara_Mexico_MX2025-0005.pdf)")
