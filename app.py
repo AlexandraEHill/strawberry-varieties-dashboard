@@ -323,7 +323,7 @@ with tab_regional:
             "Florida's mix mirrors California's old→new transition, driven by UF/IFAS releases:\n\n"
             "- **Florida Radiance** — once dominant (~75% of acreage pre-2018), now largely displaced.\n"
             "- **Florida Brilliance** — the new leader, ~55–60% of acreage in recent seasons.\n"
-            "- **Sweet Sensation® ‘Florida127’** — ~25–30%, now sliding.\n"
+            "- **Sweet Sensation® ‘Florida127’** — rising through 2022, now ~25–30%.\n"
             "- **Medallion™** — a 2020 release gaining ground (~20%).\n"
             "- **Festival / Florida Beauty** — older, fading.\n\n"
             "Shares are approximate spot estimates, not a consistent annual series.\n\n"
@@ -335,6 +335,7 @@ with tab_regional:
             "- [The Packer — UF standout varieties](https://www.thepacker.com/news/produce-crops/university-florida-research-center-offers-standout-strawberry-varieties)\n"
             "- [FreshPlaza — new ‘Florida Brilliance’ variety](https://www.freshplaza.com/europe/article/9062095/new-florida-brilliance-variety-appealing-to-state-s-strawberry-industry/)\n"
             "- [Florida Strawberry (FFSP) — ‘Florida Brilliance’ profile](https://ffsp.net/varieties/strawberry/florida-brilliance/)\n"
+            "- [Produce Business — Florida strawberry report](https://producebusiness.com/florida-strawberry-report-the-varieties-making-waves/)\n"
             "- [Agronometrics — Florida's $300M strawberry industry](https://stories.agronometrics.com/researchers-play-key-role-in-floridas-300-million-strawberry-industry/)")
 
     with st.expander("🌵 Mexico: Imported Genetics, Consolidating", expanded=True):
