@@ -299,7 +299,7 @@ with tab_regional:
         "the series agree closely at ~37k ac. (Links to the GAIN reports are at the bottom of this page.)")
 
     st.divider()
-    st.markdown("**Snapshot: A single year by detailed region **")
+    st.markdown("**Snapshot: A single year by detailed region**")
     snap_years = sorted(rsnap.year.unique())
     snap_yr = st.select_slider("Season (year)", options=snap_years, value=snap_years[-1])
     s = rsnap[rsnap.year == snap_yr].sort_values("acres", ascending=True)
